@@ -1,0 +1,13 @@
+runtime: nodejs
+vm: true
+api_version: 1
+beta_settings:
+  machine_type: f1-micro
+manual_scaling:
+    instances: 1
+resources:
+  cpu: .5
+  memory_gb: .18
+  disk_size_gb: 10
+skip_files:
+  - ^(.*/)?.*/node_modules/.*$

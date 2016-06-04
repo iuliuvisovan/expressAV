@@ -1,0 +1,355 @@
+{
+    "aboutSection": [
+        {
+            "_id": "57239bbf8923c204183a8de7",
+            "title": "Early life",
+            "content": "Aurelia Vişovan was born on June 30, 1990 in Sighetu Marmaţiei, in Romania. She started to study piano at the age of 5, in her birth town, under the guidance of Prof. Monica Chifor. From the very beginning she felt very at ease on stage, which led her to take part, from the age of 6, in national and international competitions, winning more than 20 1st prizes. In 2002 she already performed her first concert as a soloist with an orchestra. Continuing to take part in competitions in Romania and abroad, she became a well-known young pianist in Romania and got the chance to play recitals and concerts in her native country. At the age of 12 she moved to Cluj-Napoca, a cultural center of Romania, where she continued her piano studies with Prof. Gerda Türk, and in 2008 she entered the “G.Dima” Music Academy in the same city, where she benefited from the guidance and support of Prof.Adriana Bera. In June 2011 she was accepted at the University for Music and Previousrforming Arts in Vienna, where she is currently studying with Prof. Martin Hughes.",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8de8",
+            "title": "From passion to profession",
+            "content": "Since 2013 Miss Vișovan is also a student in the harpsichord class of Prof.Gordon Murray and is already active as a harpsichordist and continuo player. She has performed in the Tagliavini Collection in Bologna, in the Bach Woche Festival in Vienna and in 2015 she has won the 2nd prize in the “Paola Bernardi” International Harpsichord Competition in Bologna. A very passionate chamber musician, in 2009 she becomes a scholar of the SoNoRo-Interferenţe Chamber Music project, which gave her the opportunity to work and play with internationally renowned young musicians and to perform in the SoNoRo Chamber Music Festival in Bucharest. Her adaptability and her speed of adjusting in different groups and music styles made her soon very requested in Vienna, too, where she had the chance to work under the guidance of great musicians, such as Natalia Gutman, Pavel Vernikov, Johannes Meissl or the members of the Altenberg Trio. A very important role in her artistic development played her taking part in many workshops and masterclasses held by renowned musicians, such as Boris Berman, Akiko Ebi, Dang Thai Son, Stephen Hough, Andrzej Jaśinski, György Kurtág or Robert Levin.",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8de9",
+            "title": "A notorious musician",
+            "content": "Aurelia Vişovan is regularly invited to play concerts and recitals in different cities in Romania, Austria, Germany, France, Spain, Portugal and Japan. In May 2012 Aurelia Vișovan performed the Opening Concert of the ''Sächsisches Mozartfest'' in Chemnitz, Germany, together with the Philharmonisches Kammerorchester Dresden, conducted by Wolfgang Hentrich. She has also collaborated with many Romanian orchestras, such as the Chamber Radio Orchestra, Bucharest, the Romanian Youth Orchestra, and the Philharmonic Orchestras of Cluj-Napoca, Satu-Mare, Arad and Sibiu, conducted by Mihail Agafița, Horia Andreescu, Cristian Brâncuși, Gheorghe Victor Dumănescu, Cristian Mandeal and Petre Sbârcea. In 2015, Miss Vișovan performed W.A.Mozarts Concerto in A major, K414, on an original fortepiano, built in 1825, together with the ”Diletto Musicale” Chamber Orchestra, within the Sighișoara Music Academy and Festival. In January 2013, Miss Vișovan made her debut in the Grand Hall of the Philharmonie in Berlin, playing P.I.Tchaikovsky's Second Piano Concerto, together with „Das Sinfonie Orchester Berlin” conducted by Stanley Dodds. Her most recent prizes include, in 2014, the first prize in the „Hildegard Maschmann Piano Competition” in Graz, Austria and in 2015 the 1st Prize in the ”Ciudad de Huesca” International Piano Competition in Spain, the 1st Prize in the „Santa Cecilia” International Piano Competition in Porto, the 3rd Prize and Special Prize for Contemporary Music in the „Jean Francaix” Competition in Paris, France and the 2nd Prize in the “Paola Bernardi” International Harpsichord Competition in Bologna, Italy.",
+            "__v": 0
+        }
+    ],
+    "concert": [
+        {
+            "_id": "57239bbf8923c204183a8dea",
+            "name": "Chamber Music Concert with ASAG-Quartett",
+            "date": 1458172800,
+            "city": "Vienna, Austria",
+            "location": "University for Music and Performing Arts",
+            "programme": "W.Wagner, L.van Beethoven, M.Bruch, P.Juon",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8deb",
+            "name": "Solo Piano Recital",
+            "date": 1467504000,
+            "city": "Porto, Portugal",
+            "location": "Palacete Viscondes Balsemão",
+            "programme": "W.A.Mozart – Adagio K540<br>J.Francaix – Sonate<br>R.Schumann – Kreisleriana, op.16",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8dec",
+            "name": "Chamber Music Concert with Vera Karner and Dominik Wagner",
+            "date": 1469059200,
+            "city": "Germany",
+            "location": "Festival Mecklenburg-Vorpommern",
+            "programme": "L.van Beethoven – Trio op.11, “Gassenhauer-Trio”<br/>P.Juon – Trio Miniatures<br/>M.Bruch – Pieces for viola, clarinet and piano, 1st and 2nd Mvt.<br/>W.Wagner – Fantasiestück",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8ded",
+            "name": "Chamber Music Concert with Vera Karner and Dominik Wagner",
+            "date": 1471046400,
+            "city": "Germany",
+            "location": "Schleswig-Holstein Festival",
+            "programme": " L.van Beethoven – Trio op.11, “Gassenhauer-Trio”<br/>P.Juon – Trio Miniatures<br/>M.Bruch – Pieces for viola, clarinet and piano, 1st and 2nd Mvt.<br/>W.Wagner – Fantasiestück",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8dee",
+            "name": "Solo Piano Recital",
+            "date": 1474329600,
+            "city": "Porto, Portugal",
+            "location": "Casa da Musica",
+            "programme": "J.S.Bach – French Suite no.5 in G major<br/>A.Skriabin – Sonata no.3 in F# minor, op.23<br/>G.Enescu – Suite op.10 in D major",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8def",
+            "name": "Solo Piano Recital",
+            "date": 1474761600,
+            "city": "Paris, France",
+            "location": "Centre Portugues",
+            "programme": "J.S.Bach – French Suite no.5 in G major<br>A.Skriabin – Sonata no.3 in F# minor, op.23<br>G.Enescu – Suite op.10 in D major",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8df0",
+            "name": "Solo Piano Recital",
+            "date": 1456012800,
+            "city": "Montaut de Villereal, France",
+            "location": "Mesnil St.Martin",
+            "programme": "",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8df1",
+            "name": "Solo Piano Recital",
+            "date": 1453075200,
+            "city": "Cluj, Romania",
+            "location": "Music Academy",
+            "programme": "",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8df2",
+            "name": "Concert with the Aron Quartett Wien",
+            "date": 1447113600,
+            "city": "Brasov, Romania",
+            "location": "Brasov Philharmonic",
+            "programme": "",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8df3",
+            "name": "Concert with the Aron Quartett Wien",
+            "date": 1446854400,
+            "city": "Cluj Napoca, Romania",
+            "location": "Music Academy, Studio Hall",
+            "programme": "",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8df4",
+            "name": "Skriabinfest",
+            "date": 1446163200,
+            "city": "Vienna, Austria",
+            "location": "University for Music and Performing Arts",
+            "programme": "",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8df5",
+            "name": "Solo Piano Recital",
+            "date": 1444608000,
+            "city": "Vienna, Austria",
+            "location": "Ostklub/Schwarzberg",
+            "programme": "",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8df6",
+            "name": "Chopin Festival",
+            "date": 1442102400,
+            "city": "Nihonmatsu, Japan",
+            "location": "-",
+            "programme": "",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8df7",
+            "name": "Chopin Festival",
+            "date": 1442016000,
+            "city": "Minami Soma, Japan",
+            "location": "-",
+            "programme": "",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8df8",
+            "name": "Mozart Piano Concerto K414 on Fortepiano",
+            "date": 1438732800,
+            "city": "Sighisoara, Romania",
+            "location": "Monastery Church",
+            "programme": "",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8df9",
+            "name": "Chamber Music Concert with Klara Wincor, Cello",
+            "date": 1434758400,
+            "city": "Vienna, Austria",
+            "location": "Beethoven Haus Heiligenstadt",
+            "programme": "",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8dfa",
+            "name": "Chamber Music Concert with Tudor Andrei, violin",
+            "date": 1429747200,
+            "city": "Bruxelles, Belgium",
+            "location": "Église Saints-Jean-et Etienne aux Minimes",
+            "programme": "",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8dfb",
+            "name": "Solo Piano Recital for the Chopin Gesellschaft Wien",
+            "date": 1429574400,
+            "city": "Vienna, Austria",
+            "location": "University for Music und Performing Arts, Franz Liszt Saal",
+            "programme": "",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8dfc",
+            "name": "Solo Piano Recital",
+            "date": 1427760000,
+            "city": "Cluj-Napoca, Romania",
+            "location": "Music Academy, Studio Hall",
+            "programme": "",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8dfd",
+            "name": "Solo Piano Recital",
+            "date": 1427155200,
+            "city": "Bucharest, Romania",
+            "location": "Romanian Atheneum, Studio Hall",
+            "programme": "",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8dff",
+            "name": "Solo Harpsichord Recital",
+            "date": 1477515600,
+            "city": "Bologna, Italy",
+            "location": "Tagliavini Collection",
+            "programme": "<br>",
+            "__v": 0
+        },
+        {
+            "_id": "5724775963a39811003f4c85",
+            "name": "Chamber Music Concert",
+            "date": 1464386400,
+            "city": "Vienna, Austria",
+            "location": "J.Nepomuk Kapelle",
+            "programme": "to be announced",
+            "__v": 0
+        },
+        {
+            "_id": "5734f7932e1aea1200eb59c6",
+            "name": "Solo Piano Recital",
+            "date": 1472724000,
+            "city": "Barcelos, Portugal",
+            "location": "Fralaes",
+            "programme": "J.S.Bach - French Suite no.5 in G major <br> A.Skriabin - Sonata no.3 in F# minor, op.23 <br> G.Enescu - Suite op.10 in D major",
+            "__v": 0
+        },
+        {
+            "_id": "5740b70a3e73e512003edda0",
+            "name": "Harpsichord Concert with Karsten Henschel, Altus",
+            "date": 1478775600,
+            "city": "Vienna, Austria",
+            "location": "Reformierte Stadtkirche",
+            "programme": "J.S.Bach, A.R.Stricker, J.D.Heinichen",
+            "__v": 0
+        },
+        {
+            "_id": "5740b7423e73e512003edda1",
+            "name": "Harpsichord Concert with Karsten Henschel, Altus",
+            "date": 1478862000,
+            "city": "Vienna, Austria",
+            "location": "Haus Gnad",
+            "programme": "J.S. Bach, Augustin Reinhard Stricker,  Johann David Heinichen",
+            "__v": 0
+        },
+        {
+            "_id": "5740b7723e73e512003edda2",
+            "name": "Solo Piano Recital",
+            "date": 1487070000,
+            "city": "Linz, Austria",
+            "location": "Brucknerhaus",
+            "programme": "to be announced",
+            "__v": 0
+        }
+    ],
+    "mediaPhoto": [
+        {
+            "_id": "57239bbf8923c204183a8e00",
+            "url": "img/carousel/aurelia-piano1.jpg",
+            "active": true,
+            "alt": "Aurelia Visovan",
+            "title": "Aurelia Visovan",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8e01",
+            "url": "img/carousel/aurelia-piano2.jpg",
+            "active": false,
+            "alt": "Aurelia Visovan",
+            "title": "Aurelia Visovan",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8e02",
+            "url": "img/carousel/aurelia-piano3.jpg",
+            "active": false,
+            "alt": "Aurelia Visovan",
+            "title": "Aurelia Visovan",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8e03",
+            "url": "img/carousel/aurelia-piano4.jpg",
+            "active": false,
+            "alt": "Aurelia Visovan",
+            "title": "Aurelia Visovan",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8e04",
+            "url": "img/carousel/aurelia-piano5.jpg",
+            "active": false,
+            "alt": "Aurelia Visovan",
+            "title": "Aurelia Visovan",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8e05",
+            "url": "img/carousel/aurelia-piano6.jpg",
+            "active": false,
+            "alt": "Aurelia Visovan",
+            "title": "Aurelia Visovan",
+            "__v": 0
+        }
+    ],
+    "mediaVideo": [
+        {
+            "_id": "57239bbf8923c204183a8e06",
+            "title": "Aurelia Visovan plays Enescu - Bourree from Suite op.10",
+            "url": "https://www.youtube.com/embed/Zgha2BcsOdI",
+            "ratio": "4by3",
+            "year": "2011",
+            "imageUrl": "img//media/aurelia-2011.jpg",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8e07",
+            "title": "L. van Beethoven - Sonata op.106, 3. Adagio sostenuto by Aurelia Visovan",
+            "url": "https://www.youtube.com/embed/0QiajqT8bog",
+            "ratio": "4by3",
+            "year": "2013",
+            "imageUrl": "img//media/aurelia-2013.jpg",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8e08",
+            "title": "Aurelia Visovan plays A. von Zemlinsky - Fantasien über Gedichte von R. Dehmel",
+            "url": "https://www.youtube.com/embed/sdi0a7Ii_hE",
+            "ratio": "16by9",
+            "year": "2014",
+            "imageUrl": "img//media/aurelia-2014.jpg",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8e09",
+            "title": "Aurelia Visovan plays Mozart Sonata KV 280 in F major",
+            "url": "https://www.youtube.com/embed/u8IRpNpFw2s",
+            "ratio": "16by9",
+            "year": "2016",
+            "imageUrl": "img//media/aurelia-2016.jpg",
+            "__v": 0
+        },
+        {
+            "_id": "57239bbf8923c204183a8e0a",
+            "title": "Aurelia Visovan plays Fandango by Soler",
+            "url": "https://www.youtube.com/embed/RP-bTf2FNmc",
+            "ratio": "16by9",
+            "year": "2016",
+            "imageUrl": "img/media/aurelia-2016-2.jpg",
+            "__v": 0
+        }
+    ]
+}

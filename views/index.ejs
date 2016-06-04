@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Iuliu Visovan">
+    <meta name="title" content="Aurelia Visovan"/>
+    <meta name="description"
+          content="Official Website of the Romanian pianist, fortepianist and harpsichordist, Aurelia Visovan."/>
+    <meta name="keywords" content="aurelia visovan aureliavisovan aureliavisovan.com romania pianist"/>
+    <link rel="icon" type="image/jpg" href="logo.jpg">
+    <title>Aurelia Visovan</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="flag-icon-css-master/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Parisienne' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400, 600' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <!--<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>-->
+    <!--<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>-->
+    <!--<![endif]&ndash;&gt;-->
+
+</head>
+
+<body id="page-top" class="index">
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top" title="av - Aurelia Visovan">av</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#about" title="Learn more about Aurelia">About</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#concerts"
+                       title="See the list of past and future concerts">Concerts</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#media" title="Check out the collection of media content">Media</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#repertoire" title="Consult Aurelia's repertoire">Repertoire</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#contact" title="Find out how you can contact Aurelia">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="intro-text">
+            <h1 style="margin-top: 100px">Aurelia Visovan</h1>
+            <a href="#about" style="margin-bottom: 100px" class="page-scroll btn btn-xl"
+               title="Learn more about Aurelia">Enter</a>
+            <center>
+                <div class="news" style="display: none">
+                    <h3>News:</h3>
+                    <div class="date"><span class="glyphicon glyphicon-star-empty"></span><br/><span class="hidden-xs">30.01.2015</span>
+                    </div>
+                    <h4>The trio Aurelia Visovan(piano), Vera Karner(clarinet) and Dominik Wagner(double bass) won the
+                        "Fanny Mendelssohn Förderpreis" in Hamburg and will<br class="visible-xs"/> record their debut
+                        CD for Berlin Classics</h4>
+                </div>
+            </center>
+        </div>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">About</h2>
+                <h3 class="section-subheading text-muted">Biography of the 25 year-old Romanian musician, Aurelia
+                    Visovan</h3>
+            </div>
+        </div>
+        <div class="row text-center">
+            <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <img src="img/about/paragraphImage1.png" class="round-image" alt="Young Aurelia">
+                    </span>
+                <h4 class="service-heading"><%= data.aboutSections[0].title %></h4>
+                <p class="text-muted"><%= data.aboutSections[0].content %></p>
+            </div>
+            <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <img src="img/about/paragraphImage2.png" class="round-image" alt="Aurelia playing the piano">
+                    </span>
+                <h4 class="service-heading"><%= data.aboutSections[1].title %></h4>
+                <p class="text-muted"><%= data.aboutSections[1].content %></p>
+            </div>
+            <div class="col-md-4">
+                    <span class="fa-stack fa-4x">
+                        <img src="img/about/paragraphImage3.png" class="round-image"
+                             alt="Aurelia's hands on piano keys">
+                    </span>
+                <h4 class="service-heading"><%= data.aboutSections[2].title %></h4>
+                <p class="text-muted"><%= data.aboutSections[2].content %>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Concerts Section -->
+<section id="concerts" class="bg-light-gold">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Concerts</h2>
+                <h3 class="section-subheading text-muted">Aurelia Vișovan's upcoming concerts</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="panel panel-default">
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>City</th>
+                        <th>Location</th>
+                    </tr>
+                    </thead>
+                    <div class="panel-heading">Upcoming (click on a concert to see the programme)</div>
+                    <tbody>
+                    <% data.concerts
+                            .filter(function (item) {
+                                return new Date(item.date * 1000) >= new Date();
+                            }).sort(function (a, b) {
+                                return a.date - b.date
+                            }).forEach(function(item) { %>
+                    <tr class="clickable" data-toggle="collapse" data-target="#concertinfo<%= item.date %>">
+                        <th scope="row"><%= item.name %></th>
+                        <td><%= dateformat(new Date(item.date * 1000), "dd.mm.yyyy") %></td>
+                        <td><%= item.city %></td>
+                        <td><%= item.location %></td>
+                    </tr>
+                    <tr class="collapse" id="concertinfo<%= item.date %>">
+                        <td colspan="8" style="background-color: #f9f9f9"><b></b><%- item.programme %></td>
+                    </tr>
+                    <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">Archive</div>
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>City</th>
+                        <th>Location</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <% data.concerts
+                            .filter(function (item) {
+                                return new Date(item.date * 1000) < new Date();
+                            }).sort(function (a, b) {
+                                return a.date - b.date
+                            }).forEach(function(item) { %>
+                    <tr>
+                        <td><%= item.name %></td>
+                        <td><%= dateformat(new Date(item.date * 1000), "dd.mm.yyyy") %></td>
+                        <td><%= item.city %></td>
+                        <td><%= item.location %></td>
+                    </tr>
+                    <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Media Section -->
+<section id="media">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Media</h2>
+                <h3 class="section-subheading text-muted">Photo gallery and recordings</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div id="myCarousel" class="carousel slide">
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                    <li data-target="#myCarousel" data-slide-to="3"></li>
+                    <li data-target="#myCarousel" data-slide-to="4"></li>
+                    <li data-target="#myCarousel" data-slide-to="5"></li>
+                </ol>
+
+                <div class="carousel-inner">
+                    <% var i = 0; data.mediaPhotos.forEach(function(item) {  %>
+                    <div class="item <%= i == 0 ? "active" : "" %>">
+                        <img src="<%= item.url %>" alt="<%= item.alt %>" title="<%= item.title %>"
+                             class="img-responsive"/>
+                    </div>
+                    <% i++;}) %>
+                </div>
+
+                <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+                    <span class="icon-prev"></span>
+                    <div class="invistext">Previous</div>
+                </a>
+
+                <a class="carousel-control right" href="#myCarousel" data-slide="next">
+                    <span class="icon-next"></span>
+                    <div class="invistext">Next</div>
+                </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="timeline">
+                    <% var right = false; data.mediaVideos.forEach(function (item) { %>
+                    <li class="<%= right ? 'timeline-inverted' : '' %>">
+                        <div class="timeline-image">
+                            <img class="img-circle img-responsive" src="<%= item.imageUrl %>"
+                                 alt="Aurelia Visovan in <%= item.year %>">
+                        </div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4><%= item.year %></h4>
+                                <h4 class="subheading"> <%= item.title %> </h4>
+                            </div>
+                            <div class="embed-responsive embed-responsive-<%= item.ratio %>">
+                                <iframe width="420" height="315" src="<%= item.url %>"
+                                        allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </li>
+                    <% right = !right }) %>
+                    <li class="timeline-image">
+                        <div class="timeline-image">
+                            <h4>More
+                                <br>To
+                                <br>Come</h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Repertoire Section -->
+<section id="repertoire" class="bg-light-gold">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Repertoire</h2>
+                <h3 class="section-subheading text-muted"><strong>Aurelia Visovan</strong>'s current repertoire</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Piano concertos</h3>
+                    </div>
+                    <div class="panel-body pre-scrollable">
+                        <% data.repertoireItems.filter(function(item) { return item.type == 1}).forEach(function(item) { %>
+                        <b><%= item.composer %></b><br>
+                        <% item.compositions.forEach(function (item2) { %>
+                        <%- item2 %><br>
+                        <% }) %>
+                        <br>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Chamber music</h3>
+                    </div>
+                    <div class="panel-body pre-scrollable">
+                        <% data.repertoireItems.filter(function(item) { return item.type == 2}).forEach(function(item) { %>
+                        <b><%= item.composer %></b><br>
+                        <% item.compositions.forEach(function (item2) { %>
+                        <%- item2 %><br>
+                        <% }) %>
+                        <br>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default text-center">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Solo piano</h3>
+                    </div>
+                    <div class="panel-body pre-scrollable">
+                        <% data.repertoireItems.filter(function(item) { return item.type == 3}).forEach(function(item) { %>
+                        <b><%= item.composer %></b><br>
+                        <% item.compositions.forEach(function (item2) { %>
+                        <%- item2 %><br>
+                        <% }) %>
+                        <br>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading" title="Aurelia's Contact Details">Contact</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-4 text-center">
+                <h3 class="contact"><strong>Aurelia Visovan</strong></h3>
+                <h4 class="contact"><span class="fa fa-external-link gold" title="Website"></span>
+                    www.aureliavisovan.com</h4>
+                <h4 class="contact"><span class="fa fa-envelope-o gold" title="Mail"></span> aureliavisovan@gmail.com
+                </h4>
+                <h4 class="contact"><span class="glyphicon glyphicon-phone gold" title="Phone"></span> +43 66 05 97 97
+                    65 <span class="flag-icon flag-icon-at" title="Austria"></span></h4>
+                <h4 class="contact"><span class="glyphicon glyphicon-phone gold" title="Phone"></span> +40 727 316 834
+                    <span class="flag-icon flag-icon-ro" title="Romania"></span></h4>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <a href="http://www.iuliu.net" target="_blank" class="rigid-link"
+                   title="Website built and mantained by www.iuliu.net"><span class="copyright">Copyright &copy; Iuliu Vișovan 2015</span></a>
+            </div>
+            <div class="col-md-4">
+                <div class="fb-like" data-href="https://www.facebook.com/AureliaVisovanOfficial" data-layout="standard"
+                     data-action="like" data-show-faces="true" data-share="false"></div>
+                </i></a>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline quicklinks">
+                    <li><a href="#"></a>
+                    </li>
+                    <li><a href="http://www.aureliavisovan.com" target="_blank" class="rigid-link"
+                           title="www.aureliavisovan.com">www.aureliavisovan.com</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div id="fb-root"></div>
+<script>(function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.4";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/cbpAnimatedHeader.js"></script>
+
+<!-- Contact Form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="js/contact_me.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="js/agency.js"></script>
+
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-66157640-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+</body>
+
+</html>

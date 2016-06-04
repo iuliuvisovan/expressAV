@@ -1,0 +1,82 @@
+body {
+    overflow: hidden;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    gold;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color:    white;
+    opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color:    white;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color:    white;
+}
+:placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
+    color:    gold;
+}
+
+.btn-enter {
+    padding: 9px;
+    background-color: rgba(255, 255, 255, .05);
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-left: 1px dotted rgba(255, 255, 255, 0.3);
+    color: white;
+    position: absolute;
+    right: 0px;
+    padding-right: 15px;
+    padding-left: 12px;
+}
+
+.btn-enter:hover {
+    color: gold;
+    background-color: rgba(255, 255, 255, .05);
+}
+
+
+.cool-input {
+    padding: 5px 0px;
+    font-family: 'Parisienne', cursive;
+    font-size: 20px;
+    font-weight: 700;
+    color: white;
+    border: none;
+    width: 95%;
+    float: left;
+    background-color: transparent;
+    -webkit-transition: all .3s;
+    -moz-transition: all .3s;
+    transition: all .3s;
+}
+
+.cool-input-wrapper {
+    /*width: auto;*/
+    border: 1px dotted rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    position: relative;
+    height: 40px;
+    text-align: center;
+}
+
+.cool-input-wrapper.danger {
+    background-color: rgba(255, 50, 50, 0.1);
+}
+
+
+@media (max-width:768px) {
+    h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 25px;
+        margin-top: 0;
+    }
+}

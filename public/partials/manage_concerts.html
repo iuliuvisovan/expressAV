@@ -1,0 +1,186 @@
+<!-- Concerts section -->
+<header id="concerts" class="section">
+    <div class="container">
+        <div class="intro-text" style="position: relative;">
+            <h1 class="section-title"><span style="color: gold">#</span>concerts</h1>
+            <div class="line-underline"></div>
+        </div>
+        <div class="section-editor" style="padding-top: 120px; display: none">
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="row">
+                        <a onclick="$('#concert0').fadeIn('slow')" class="btn btn-primary"><i style="color: gold"
+                                                                                              class="fa fa-plus"></i>
+                            Add a new one</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="actualConcerts" style="display: none">
+                <div class="col-md-6 no-padding" style="padding-right: 10px;">
+                    <!--New concert from here-->
+                    <div id="concert0" style="display: none; margin-top: 32px; margin-bottom: 31px;">
+                        <h5 style="">New concert</h5>
+                        <div class="concert new-concert"
+                             style="margin-top: 13px; text-align: left; border: 1px solid goldenrod">
+                            <div style="margin-top: 4px">
+                                <span style="display: inline-block;" class="glyphicon glyphicon-font"></span>
+                                <input type="text" ng-model="newConcert.name" placeholder="Name"/>
+                                <h6 class="clickable btn-coolhover btn-close"
+                                    style="margin-top: 5px; float: right; margin-right: 2px;">
+                                <span onclick="$('#concert0').fadeOut()" class="glyphicon glyphicon-remove"
+                                      title="Close"></span>
+                                </h6>
+                            </div>
+                            <div>
+                                <span style="display: inline-block;" class="glyphicon glyphicon-calendar"></span>
+                                <input type="text" ng-model="newConcert.dateAsString" placeholder="Date (dd.mm.yyyy)"/>
+                                <span id="iconDateLowerThanToday" title="This date is either the past or invalid!" style="color: goldenrod; display: none" class="fa fa-exclamation-circle"></span>
+                            </div>
+                            <div>
+                                <span style="display: inline-block;" class="glyphicon glyphicon-globe"></span>
+                                <input type="text" ng-model="newConcert.city" placeholder="City"/>
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" id="newConcertFlag" style="margin-top: -4px; display: none"
+                                     class="flag flag-{{ getCountryByCity(newConcert.city) }}"/>
+                            </div>
+                            <div>
+                                <span style="display: inline-block;" class="glyphicon glyphicon-map-marker"></span>
+                                <input type="text" ng-model="newConcert.location" placeholder="Location"/>
+                            </div>
+                            <div>
+                                <span style="display: inline-block;" class="glyphicon glyphicon-music"></span>
+                                <input type="text" ng-model="newConcert.programme"
+                                       placeholder="Programme (use <br> for a new line)"/>
+                            </div>
+                            <a class="btn btn-primary"
+                               style="padding: 10px 15px; float: right; width: 100px; margin-top: -45px; padding-bottom: 5px"
+                               ng-click="addConcert()">
+                                <h6 style="margin-top: 5px; margin-right: 0px;">
+                    <span style="display: inline-block;"
+                          class="glyphicon glyphicon-ok-sign gold"></span>
+                                    Create
+                                </h6>
+                            </a>
+                        </div>
+                    </div>
+                    <!--New concert to here-->
+                    <div class="col-md-12 no-padding" style="padding-left: 10px">
+                    <span style="margin-top: 30px; margin-bottom: 10px; float: left">
+                        <h5 id="upcomingTitle" style="display: inline">Upcoming</h5>
+                    </span>
+                    </div>
+                    <div class="col-md-12 concerts-wrapper no-padding">
+                        <div ng-if="editCancelled" class="concert" id="{{concert._id}}"
+                             ng-repeat="concert in upcomingConcerts | orderBy:'date'">
+                            <div class="concert-header" style="display: inline-block;
+                            padding: 5px;
+                            border: 1px solid rgba(255, 255, 255, 0.1);
+                            background-color: rgba(255, 255, 255, 0.1);
+                            color: white">
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="margin-top: -4px;" class="flag flag-{{ getCountryByCity(concert.city) }}"/>
+                                <b class="field" id="concertName{{concert._id}}">{{ concert.name }}</b>
+                            </div>
+                            <h6 class="clickable btn-coolhover btn-close"
+                                style="margin-top: 5px; float: right; margin-right: 2px;">
+                                <span ng-click="removeConcert(concert._id)" class="glyphicon glyphicon-remove"
+                                      title="Remove"></span>
+                            </h6>
+                            <br/>
+                            <br/>
+                            <div style="margin-top: -8px">
+                                <span style="display: inline-block;" class="glyphicon glyphicon-calendar"></span>
+                                <td>
+                                    <span id="concertDate{{concert._id}}" data-initial-date={{concert.date}}>
+                                        {{ concert.date * 1000 | date:'dd.MM.yyyy'}} {{ countdownConcert(concert.date) }}
+                                    </span>
+                                </td>
+                            </div>
+                            <div>
+
+                                <span style="display: inline-block;" class="glyphicon glyphicon-globe"></span>
+                                <span class="field" id="concertCity{{concert._id}}">{{ concert.city }}</span>
+                            </div>
+                            <div>
+                                <span style="display: inline-block;" class="glyphicon glyphicon-map-marker"></span>
+                                <span class="field" id="concertLocation{{concert._id}}">{{ concert.location }}</span>
+                            </div>
+                            <div>
+                                <span style="display: inline-block;" class="glyphicon glyphicon-music"></span>
+                                <span class="field" id="concertProgramme{{concert._id}}"
+                                      ng-bind-html="concert.programme | sanitize"></span>
+                            </div>
+
+                            <div id="concertEditButtons" style="margin-bottom: -5px; margin-right: -5px">
+                                <a id="editConcert{{concert._id}}" class="btn btn-primary no-expand"
+                                   style="padding: 10px 15px; float: right; width: 95px; margin-top: -45px; padding-bottom: 5px"
+                                   ng-click="editConcert(concert._id)">
+                                    <h6 style="margin-top: 5px;">
+                                    <span style="display: inline-block;"
+                                          class="glyphicon glyphicon-pencil"></span>
+                                        Modify
+                                    </h6>
+                                </a>
+                                <a id="cancelConcertEdit{{concert._id}}" class="btn btn-primary no-expand"
+                                   style="display: none;
+                                   padding: 10px 15px;
+                                   border-top-left-radius: 0!important;
+                                   border-top-right-radius: 0!important;
+                                   float: right;
+                                   width: 95px;
+                                   margin-top: -45px;
+                                   padding-bottom: 5px"
+                                   ng-click="cancelConcertEdit(concert._id)">
+                                    <h6 style="margin-top: 5px; margin-right: 0px;">
+                                    <span style="display: inline-block; color: white"
+                                          class="glyphicon glyphicon-remove-sign"></span>
+                                        Cancel
+                                    </h6>
+                                </a>
+                                <a id="saveConcert{{concert._id}}" class="btn btn-primary no-expand small-to-left"
+                                   style="display: none;
+                                   padding: 10px 15px;
+                                   float: right;
+                                   border-bottom-left-radius: 0!important;
+                                   border-bottom-right-radius: 0!important;
+                                   width: 95px;
+                                   margin-top: -90px;
+                                   padding-bottom: 5px"
+                                   ng-click="saveConcert(concert._id)">
+                                    <h6 style="margin-top: 5px; margin-right: 0px;">
+                                    <span style="display: inline-block; color: white"
+                                          class="glyphicon glyphicon-ok"></span>
+                                        Save
+                                    </h6>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 no-padding">
+                    <div class="col-md-12 no-padding">
+                    <span style="margin-top: 30px; margin-bottom: 10px; float: right">
+                        <h5 id="archiveTitle" style="display: inline;">Archive</h5>
+                        <!--<span style="color: gold;" class="fa fa-file-archive-o"></span>-->
+                    </span>
+                    </div>
+                    <div class="col-md-12 concerts-wrapper no-padding">
+                        <div class="concert concert-archive" id="{{concert._id}}"
+                             ng-repeat="concert in archiveConcerts | orderBy:'-date'">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="margin-top: -4px;" class="flag flag-{{ getCountryByCity(concert.city) }}"/>
+                            &nbsp;<span id="concertName{{concert._id}}">{{ concert.name }}</span>
+                            <h6 class="clickable btn-coolhover btn-close"
+                                style="margin-top: 15px; float: right; margin-right: 2px;">
+                            <span ng-click="removeConcert(concert._id)" class="glyphicon glyphicon-remove"
+                                  title="Remove"></span>
+                            </h6>
+                            <br>
+                            <span style="display: inline-block;" class="glyphicon glyphicon-calendar"></span>
+                            {{ concert.date * 1000 | date:'dd.MM.yyyy'}}
+                            <span style="display: inline-block;" class="glyphicon glyphicon-map-marker"></span>
+                            {{ concert.location }} - {{ concert.city }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

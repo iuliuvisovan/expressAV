@@ -1,0 +1,63 @@
+<!-- Repertoire section -->
+<header id="repertoire" class="section">
+    <div class="container">
+        <div class="intro-text" style="position: relative;">
+            <h1 class="section-title"><span style="color: gold">#</span>repertoire</h1>
+            <div class="line-underline"></div>
+        </div>
+        <div class="section-editor" style="display: none">
+            <div class="col-md-6 text-center" style="padding-top: 150px;">
+                <h4 style="margin-bottom: 50px">
+                    Select category
+                </h4>
+                <div id="category1" class="btn btn-rectangle" ng-click="selectCategory(1)">Piano concertos</div>
+                <div id="category2" class="btn btn-rectangle" ng-click="selectCategory(2)">Chamber music</div>
+                <div id="category3" class="btn btn-rectangle" ng-click="selectCategory(3)">Solo piano</div>
+            </div>
+            <div class="col-md-6">
+                <div class="repertoire-container">
+                    <a class="btn btn-primary" onclick="$('#newComposerDiv').fadeIn(); $('#newComposerName').focus()">
+                        <i style="color: gold" class="fa fa-plus"></i> New composer
+                    </a>
+                    <div class="repertoire-composer new" id="newComposerDiv" style="display: none;">
+                        <div class="repertoire-composer-title" id="newComposerTitle">
+                            <span id="newComposerName" style="margin-left: 50px; padding: 15px; cursor: text" contenteditable="true">
+                                  New composer
+                            </span>
+                            <span class="glyphicon glyphicon-ok" style="margin-left: 10px" ng-click="addComposer()"></span>
+                            <span class="glyphicon glyphicon-remove" style="float: right"
+                                  onclick="$('#newComposerDiv').fadeOut()"></span>
+                        </div>
+                    </div>
+                    <div class="repertoire-composer" ng-repeat="item in repertoireItems | filter: {type: selectedCategoryIndex } track by $index">
+                        <div data-toggle="collapse" data-target="#compositions{{$index}}"
+                             class="repertoire-composer-title">
+                            <span class="fa fa-chevron-right"></span>
+                            <span class="like-input" id="composerName{{item._id}}">{{item.composer}}</span>
+                            <span id="btnEditComposerName{{item._id}}" class="fa fa-pencil gold" ng-click="enableComposerNameEdit(item._id, $event)"></span>
+                            <span id="btnSaveComposerName{{item._id}}" style="display:none"  class="fa fa-check gold" ng-click="saveComposerNameEdit(item._id, $event)"></span>
+                            <span ng-click="removeComposer(item._id, $event)" id="spanRemoveComposer" title="Remove composer" class="fa fa-remove" style="float: right"></span>
+                        </div>
+                        <div id="compositions{{$index}}" class="repertoire-compositions collapse">
+                            <div class="repertoire-composition"
+                                 ng-repeat="composition in item.compositions track by $index">
+                                <span class="bullet">&bull;</span>
+                                <span ng-bind-html="composition | sanitize"></span>
+                                <span class="fa fa-remove" title="Remove"
+                                      ng-click="removeComposition(item._id, $index)"></span>
+                            </div>
+                            <div class="repertoire-composition new">
+                                <input class="new-composition" id="newComposition{{item._id}}"
+                                       value="New composition from {{item.composer}}"/>
+                                <div class="composition-options">
+                                    <span id="iconSaveWithLoading" class="glyphicon glyphicon-ok" ng-click="addComposition(item._id)"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</header>

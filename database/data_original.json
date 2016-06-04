@@ -1,0 +1,762 @@
+{
+  "password": "relu",
+  "about": [
+    {
+      "title": "Early life",
+      "content": "Aurelia Vişovan was born on June 30, 1990 in Sighetu Marmaţiei, in Romania. She started to study piano at the age of 5, in her birth town, under the guidance of Prof. Monica Chifor. From the very beginning she felt very at ease on stage, which led her to take part, from the age of 6, in national and international competitions, winning more than 20 1st prizes. In 2002 she already performed her first concert as a soloist with an orchestra. Continuing to take part in competitions in Romania and abroad, she became a well-known young pianist in Romania and got the chance to play recitals and concerts in her native country. At the age of 12 she moved to Cluj-Napoca, a cultural center of Romania, where she continued her piano studies with Prof. Gerda Türk, and in 2008 she entered the “G.Dima” Music Academy in the same city, where she benefited from the guidance and support of Prof.Adriana Bera. In June 2011 she was accepted at the University for Music and Previousrforming Arts in Vienna, where she is currently studying with Prof. Martin Hughes."
+    },
+    {
+      "title": "From passion to profession",
+      "content": "Since 2013 Miss Vișovan is also a student in the harpsichord class of Prof.Gordon Murray and is already active as a harpsichordist and continuo player. She has performed in the Tagliavini Collection in Bologna, in the Bach Woche Festival in Vienna and in 2015 she has won the 2nd prize in the “Paola Bernardi” International Harpsichord Competition in Bologna. A very passionate chamber musician, in 2009 she becomes a scholar of the SoNoRo-Interferenţe Chamber Music project, which gave her the opportunity to work and play with internationally renowned young musicians and to perform in the SoNoRo Chamber Music Festival in Bucharest. Her adaptability and her speed of adjusting in different groups and music styles made her soon very requested in Vienna, too, where she had the chance to work under the guidance of great musicians, such as Natalia Gutman, Pavel Vernikov, Johannes Meissl or the members of the Altenberg Trio. A very important role in her artistic development played her taking part in many workshops and masterclasses held by renowned musicians, such as Boris Berman, Akiko Ebi, Dang Thai Son, Stephen Hough, Andrzej Jaśinski, György Kurtág or Robert Levin."
+    },
+    {
+      "title": "A notorious musician",
+      "content": "Aurelia Vişovan is regularly invited to play concerts and recitals in different cities in Romania, Austria, Germany, France, Spain, Portugal and Japan. In May 2012 Aurelia Vișovan performed the Opening Concert of the ''Sächsisches Mozartfest'' in Chemnitz, Germany, together with the Philharmonisches Kammerorchester Dresden, conducted by Wolfgang Hentrich. She has also collaborated with many Romanian orchestras, such as the Chamber Radio Orchestra, Bucharest, the Romanian Youth Orchestra, and the Philharmonic Orchestras of Cluj-Napoca, Satu-Mare, Arad and Sibiu, conducted by Mihail Agafița, Horia Andreescu, Cristian Brâncuși, Gheorghe Victor Dumănescu, Cristian Mandeal and Petre Sbârcea. In 2015, Miss Vișovan performed W.A.Mozarts Concerto in A major, K414, on an original fortepiano, built in 1825, together with the ”Diletto Musicale” Chamber Orchestra, within the Sighișoara Music Academy and Festival. In January 2013, Miss Vișovan made her debut in the Grand Hall of the Philharmonie in Berlin, playing P.I.Tchaikovsky's Second Piano Concerto, together with „Das Sinfonie Orchester Berlin” conducted by Stanley Dodds. Her most recent prizes include, in 2014, the first prize in the „Hildegard Maschmann Piano Competition” in Graz, Austria and in 2015 the 1st Prize in the ”Ciudad de Huesca” International Piano Competition in Spain, the 1st Prize in the „Santa Cecilia” International Piano Competition in Porto, the 3rd Prize and Special Prize for Contemporary Music in the „Jean Francaix” Competition in Paris, France and the 2nd Prize in the “Paola Bernardi” International Harpsichord Competition in Bologna, Italy."
+    }
+  ],
+  "concerts": [
+    {
+      "id": 1,
+      "name": "Chamber Music Concert with ASAG-Quartett",
+      "date": 1458172800,
+      "city": "Vienna, Austria",
+      "location": "University for Music and Performing Arts",
+      "programme": "W.Wagner, L.van Beethoven, M.Bruch, P.Juon"
+    },
+    {
+      "id": 2,
+      "name": "Solo Piano Recital",
+      "date": 1467504000,
+      "city": "Porto, Portugal",
+      "location": "Palacete Viscondes Balsemão",
+      "programme": "W.A.Mozart – Adagio K540<br>J.Francaix – Sonate<br>R.Schumann – Kreisleriana, op.16"
+    },
+    {
+      "id": 3,
+      "name": "Chamber Music Concert with Vera Karner and Dominik Wagner",
+      "date": 1469059200,
+      "city": "Germany",
+      "location": "Festival Mecklenburg-Vorpommern",
+      "programme": "L.van Beethoven – Trio op.11, “Gassenhauer-Trio”<br/>P.Juon – Trio Miniatures<br/>M.Bruch – Pieces for viola, clarinet and piano, 1st and 2nd Mvt.<br/>W.Wagner – Fantasiestück"
+    },
+    {
+      "id": 4,
+      "name": "Chamber Music Concert with Vera Karner and Dominik Wagner",
+      "date": 1471046400,
+      "city": "Germany",
+      "location": "Schleswig-Holstein Festival",
+      "programme": " L.van Beethoven – Trio op.11, “Gassenhauer-Trio”<br/>P.Juon – Trio Miniatures<br/>M.Bruch – Pieces for viola, clarinet and piano, 1st and 2nd Mvt.<br/>W.Wagner – Fantasiestück"
+    },
+    {
+      "id": 5,
+      "name": "Solo Piano Recital",
+      "date": 1474329600,
+      "city": "Porto, Portugal",
+      "location": "Casa da Musica",
+      "programme": "J.S.Bach – French Suite no.5 in G major<br/>A.Skriabin – Sonata no.3 in F# minor, op.23<br/>G.Enescu – Suite op.10 in D major"
+    },
+    {
+      "id": 6,
+      "name": "Solo Piano Recital",
+      "date": 1474761600,
+      "city": "Paris, France",
+      "location": "Centre Portugues",
+      "programme": "J.S.Bach – French Suite no.5 in G major<br/>A.Skriabin – Sonata no.3 in F# minor, op.23<br/>G.Enescu – Suite op.10 in D major "
+    },
+    {
+      "id": 8,
+      "name": "Solo Piano Recital",
+      "date": 1456012800,
+      "city": "Montaut de Villereal, France",
+      "location": "Mesnil St.Martin",
+      "programme": ""
+    },
+    {
+      "id": 9,
+      "name": "Solo Piano Recital",
+      "date": 1453075200,
+      "city": "Cluj, Romania",
+      "location": "Music Academy",
+      "programme": ""
+    },
+    {
+      "id": 10,
+      "name": "Concert with the Aron Quartett Wien",
+      "date": 1447113600,
+      "city": "Brasov, Romania",
+      "location": "Brasov Philharmonic",
+      "programme": ""
+    },
+    {
+      "id": 11,
+      "name": "Concert with the Aron Quartett Wien",
+      "date": 1446854400,
+      "city": "Cluj Napoca, Romania",
+      "location": "Music Academy, Studio Hall",
+      "programme": ""
+    },
+    {
+      "id": 12,
+      "name": "Skriabinfest",
+      "date": 1446163200,
+      "city": "Vienna, Austria",
+      "location": "University for Music and Performing Arts",
+      "programme": ""
+    },
+    {
+      "id": 13,
+      "name": "Solo Piano Recital",
+      "date": 1444608000,
+      "city": "Vienna, Austria",
+      "location": "Ostklub/Schwarzberg",
+      "programme": ""
+    },
+    {
+      "id": 14,
+      "name": "Chopin Festival",
+      "date": 1442102400,
+      "city": "Nihonmatsu, Japan",
+      "location": "-",
+      "programme": ""
+    },
+    {
+      "id": 15,
+      "name": "Chopin Festival",
+      "date": 1442016000,
+      "city": "Minami Soma, Japan",
+      "location": "-",
+      "programme": ""
+    },
+    {
+      "id": 16,
+      "name": "Mozart Piano Concerto K414 on Fortepiano",
+      "date": 1438732800,
+      "city": "Sighisoara, Romania",
+      "location": "Monastery Church",
+      "programme": ""
+    },
+    {
+      "id": 17,
+      "name": "Chamber Music Concert with Klara Wincor, Cello",
+      "date": 1434758400,
+      "city": "Vienna, Austria",
+      "location": "Beethoven Haus Heiligenstadt",
+      "programme": ""
+    },
+    {
+      "id": 18,
+      "name": "Chamber Music Concert with Tudor Andrei, violin",
+      "date": 1429747200,
+      "city": "Bruxelles, Belgium",
+      "location": "Église Saints-Jean-et Etienne aux Minimes",
+      "programme": ""
+    },
+    {
+      "id": 19,
+      "name": "Solo Piano Recital for the Chopin Gesellschaft Wien",
+      "date": 1429574400,
+      "city": "Vienna, Austria",
+      "location": "University for Music und Performing Arts, Franz Liszt Saal",
+      "programme": ""
+    },
+    {
+      "id": 20,
+      "name": "Solo Piano Recital",
+      "date": 1427760000,
+      "city": "Cluj-Napoca, Romania",
+      "location": "Music Academy, Studio Hall",
+      "programme": ""
+    },
+    {
+      "id": 21,
+      "name": "Solo Piano Recital",
+      "date": 1427155200,
+      "city": "Bucharest, Romania",
+      "location": "Romanian Atheneum, Studio Hall",
+      "programme": ""
+    },
+    {
+      "id": 22,
+      "name": "Chamber Music Concert",
+      "dateAsString": "28.05.2016",
+      "city": "Vienna, Austria",
+      "location": "J.Nepomuk-Kapelle",
+      "programme": "W.Wagner, L.van Beethoven, M.Bruch, P.Juon",
+      "date": 1464382800
+    }
+  ],
+  "media": {
+    "photos": [
+      {
+        "url": "img/carousel/aurelia-piano1.jpg",
+        "active": "true",
+        "alt": "Aurelia Visovan",
+        "title": "Aurelia Visovan photo"
+      },
+      {
+        "url": "img/carousel/aurelia-piano2.jpg",
+        "active": "false",
+        "alt": "Aurelia Visovan",
+        "title": "Aurelia Visovan photo"
+      },
+      {
+        "url": "img/carousel/aurelia-piano3.jpg",
+        "active": "false",
+        "alt": "Aurelia Visovan",
+        "title": "Aurelia Visovan photo"
+      },
+      {
+        "url": "img/carousel/aurelia-piano4.jpg",
+        "active": "false",
+        "alt": "Aurelia Visovan",
+        "title": "Aurelia Visovan photo"
+      },
+      {
+        "url": "img/carousel/aurelia-piano5.jpg",
+        "active": "false",
+        "alt": "Aurelia Visovan",
+        "title": "Aurelia Visovan photo"
+      },
+      {
+        "url": "img/carousel/aurelia-piano6.jpg",
+        "active": "false",
+        "alt": "Aurelia Visovan",
+        "title": "Aurelia Visovan photo"
+      }
+    ],
+    "videos": [
+      {
+        "title": "Aurelia Visovan plays Enescu - Bourree from Suite op.10",
+        "url": "https://www.youtube.com/embed/Zgha2BcsOdI",
+        "ratio": "4by3",
+        "year": "2011",
+        "imageUrl": "img//media/aurelia-2011.jpg"
+      },
+      {
+        "title": "L. van Beethoven - Sonata op.106, 3. Adagio sostenuto by Aurelia Visovan",
+        "url": "https://www.youtube.com/embed/0QiajqT8bog",
+        "ratio": "4by3",
+        "year": "2013",
+        "imageUrl": "img//media/aurelia-2013.jpg"
+      },
+      {
+        "title": "Aurelia Visovan plays A. von Zemlinsky - Fantasien über Gedichte von R. Dehmel",
+        "url": "https://www.youtube.com/embed/sdi0a7Ii_hE",
+        "ratio": "16by9",
+        "year": "2014",
+        "imageUrl": "img//media/aurelia-2014.jpg"
+      },
+      {
+        "title": "Aurelia Visovan plays Mozart Sonata KV 280 in F major",
+        "url": "https://www.youtube.com/embed/u8IRpNpFw2s",
+        "ratio": "16by9",
+        "year": "2016",
+        "imageUrl": "img//media/aurelia-2016.jpg"
+      },
+      {
+        "title": "Aurelia Visovan plays Fandango by Soler",
+        "url": "https://www.youtube.com/embed/RP-bTf2FNmc",
+        "ratio": "16by9",
+        "year": "2016",
+        "imageUrl": "img/media/aurelia-2016-2.jpg"
+      }
+    ]
+  },
+  "repertoire": {
+    "pianoConcertos": [
+      {
+        "composer": "J. S. Bach",
+        "compositions": [
+          "Piano Concerto in A major, BWV 1055"
+        ]
+      },
+      {
+        "composer": "J. Haydn",
+        "compositions": [
+          "Piano Concerto in D major, Hob. XIII: 11"
+        ]
+      },
+      {
+        "composer": "W. A. Mozart",
+        "compositions": [
+          "Piano Concerto no.12 in A major, K.414",
+          "Piano Concerto no. 17 in G major, K. 453",
+          "Piano Concerto no. 18 in B flat major, K. 456",
+          "Piano Concerto no. 22 in E flat major, K. 482",
+          "Piano Concerto no. 23 in A major, K. 488"
+        ]
+      },
+      {
+        "composer": "L. van Beethoven",
+        "compositions": [
+          "Piano Concerto no. 1 in C major, op. 15",
+          "Piano Concerto no. 5 in E flat major, op. 73"
+        ]
+      },
+      {
+        "composer": "F. Chopin",
+        "compositions": [
+          "Piano Concerto no. 1 in e minor, op. 11",
+          "Piano Concerto no. 2 in f minor, op. 21"
+        ]
+      },
+      {
+        "composer": "R. Schumann",
+        "compositions": [
+          "Piano Concerto in a minor, op. 54",
+          "Introduction and Concert Allegro, op.134"
+        ]
+      },
+      {
+        "composer": "F. Liszt",
+        "compositions": [
+          "Piano Concerto no. 2 in A major"
+        ]
+      },
+      {
+        "composer": "S. Rachmaninov",
+        "compositions": [
+          "Paganini-Rhapsody, op. 43"
+        ]
+      },
+      {
+        "composer": "P. I. Tchaikovsky",
+        "compositions": [
+          "Piano Concerto no. 2 in G major, op. 44"
+        ]
+      }
+    ],
+    "chamberMusic": [
+      {
+        "composer": "J. S. Bach",
+        "compositions": [
+          "Sonata in D major, BWV 1028 for Cello/Viola da Gamba and Harpsichord/Piano",
+          "Sonata in B minor, BWV 1014 for Violin and Harpsichord/Piano"
+        ]
+      },
+      {
+        "composer": "L. van Beethoven",
+        "compositions": [
+          "Sonata for piano and violin no.1 in D major, op.12 no.1",
+          "Sonata for piano and violin no.3 in E flat major, op.12 no.3",
+          "Sonata for piano and violin no.4 in a minor, op.23",
+          "Sonata for piano and violin no.5 in F major, op.24",
+          "Sonata for piano and violin no.6 in A major, op.31 nr.1",
+          "Sonata for piano and violin no.7 in c minor, op.31 nr.2",
+          "Sonata for piano and violin no.9 in a minor, op.47 ”Kreutzer Sonata”",
+          "Sonata for cello and piano op.5 no. 1 in F major",
+          "Sonata for cello and piano op.5 no.2 in g minor",
+          "Sonata for cello and piano no.3 in A major, op.69",
+          "Sonata for cello and piano no.4 in C major, op.102 no.1",
+          "Variations for piano and cello (complete)",
+          "Piano Trio op.1 no.1 in E flat major",
+          "Piano Trio op.1 no.3 in c minor",
+          "Piano Trio op.11 in B flat major , ”Gassenhauer-Trio”",
+          "New composition from L. van Beethoven"
+        ]
+      },
+      {
+        "composer": "J. Brahms",
+        "compositions": [
+          "Variations on a theme by R.Schumann for piano 4 hands, op.23",
+          "Sonata for violin and piano no.1 in G major, op.78",
+          "Sonata for violin and piano no.2 in A major, op.100",
+          "Sonata for violin and piano no.3 in d minor, op.108",
+          "Piano Trio no.1 in B major, op.8",
+          "Trio for violin, horn and piano in E-flat major, op.40",
+          "Piano Quintet in f minor, op.34"
+        ]
+      },
+      {
+        "composer": "F. Chopin",
+        "compositions": [
+          "Cello Sonata in g minor, op.65"
+        ]
+      },
+      {
+        "composer": "C. Debussy",
+        "compositions": [
+          "Violin Sonata in g minor",
+          "Cello Sonata in d minor"
+        ]
+      },
+      {
+        "composer": "A. Dvorak",
+        "compositions": [
+          "Piano Quintet no.2 in A major, op.81",
+          "Piano Quartet nr.2 in E-flat major, op.87"
+        ]
+      },
+      {
+        "composer": "L. Farrenc",
+        "compositions": [
+          "Piano Quintet no.1 in a minor"
+        ]
+      },
+      {
+        "composer": "C. Franck",
+        "compositions": [
+          "Piano Quintet in f minor",
+          "Violin Sonata in A major"
+        ]
+      },
+      {
+        "composer": "Andrés Gaos",
+        "compositions": [
+          "Sonata for violin and piano in B minor, op.37"
+        ]
+      },
+      {
+        "composer": "L. Janacek",
+        "compositions": [
+          "Concertino"
+        ]
+      },
+      {
+        "composer": "W. A. Mozart",
+        "compositions": [
+          "Sonatas for piano and violin:<br> K 296 in C major,<br/> K 301 in G major,<br/> K 304 in e minor,<br/> K 306 in D major,<br/> K 305 in A major,<br/> K 378 in B major,<br/> K 379 in G major,<br/> K 403 in C major<br/>",
+          "Piano Trio in E major, K 542",
+          "Piano Trio in C major, K 548",
+          "Quintet in E flat major for Piano and Winds, K 452"
+        ]
+      },
+      {
+        "composer": "F. Mendelssohn-Bartholdy",
+        "compositions": [
+          "Piano Trio no.1 in d minor, op.49",
+          "Piano Trio no.2 in c minor, op.66",
+          "Cello Sonata in D major, op.58"
+        ]
+      },
+      {
+        "composer": "A. Pop",
+        "compositions": [
+          "Țiituri 2"
+        ]
+      },
+      {
+        "composer": "S. Prokofiev",
+        "compositions": [
+          "Violin Sonata no.1 in f minor, op.80",
+          "Violin Sonata no.2 in D major, op.94a"
+        ]
+      },
+      {
+        "composer": "Anton Rubinstein",
+        "compositions": [
+          "Cello Sonata no.1, op.18 , in D major"
+        ]
+      },
+      {
+        "composer": "R. Schumann",
+        "compositions": [
+          "Violin Sonata no.1 in a minor, op.105",
+          "Violin Sonata no.2 in d minor, op.121",
+          "Piano Trio no. 2 in F major, op.80",
+          "Fantasiestücke for cello and piano, op.73",
+          "Piano Quintet in E flat major, op.44"
+        ]
+      },
+      {
+        "composer": "F. Schubert",
+        "compositions": [
+          "Piano Trio no.1 in B flat major, D 898",
+          "Violin Sonata in A major, „Grand Duo”",
+          "Sonatina for violin and piano in g minor, op.137 no.3",
+          "Sonata in a minor, „Arpeggione”"
+        ]
+      },
+      {
+        "composer": "W. Schulze",
+        "compositions": [
+          "Deux Mouvements – Piano Trio, op.5a (1987)"
+        ]
+      },
+      {
+        "composer": "D. Shostakovich",
+        "compositions": [
+          "Cello Sonata op.40"
+        ]
+      },
+      {
+        "composer": "B. Smetana",
+        "compositions": [
+          "Piano Trio in g minor"
+        ]
+      },
+      {
+        "composer": "R. Strauss",
+        "compositions": [
+          "Cello Sonata in F Major, op.6"
+        ]
+      },
+      {
+        "composer": "P. I. Tchaikovsky",
+        "compositions": [
+          "Piano Trio in a minor, op.50"
+        ]
+      },
+      {
+        "composer": "A. von Zemlinsky",
+        "compositions": [
+          "Trio op.3 for Piano, Clarinet and Cello"
+        ]
+      }
+    ],
+    "soloPiano": [
+      {
+        "composer": "T. Ades",
+        "compositions": [
+          "Variations for Blanca"
+        ]
+      },
+      {
+        "composer": "I. Albeniz",
+        "compositions": [
+          "„Rondeña” (Iberia, Book II)"
+        ]
+      },
+      {
+        "composer": "J. S. Bach",
+        "compositions": [
+          "Well Tempered Clavier,<br><i>Book I</i>: Preludes and fugues in<br/>&bull; c minor, BWV 847<br/>&bull; F-sharp major, BWV 858<br/><i>Book II</i>: Preludes and fugues in<br/>&bull; G major, BWV 884<br/>&bull; g minor, BWV 885<br/>&bull; A-flat major, BWV 886",
+          "English Suite no.3 in g minor, BWV 808 (Prelude, Gavottes, Sarabande, Gigue)",
+          "French Suite no.5 in G major, BWV 816",
+          "French Suite no.6 in Eb major, BWV 817(Allemande, Menuet, Gigue)",
+          "Suite in Eb major, BWV 819a",
+          "Partita no.6 in E minor, BWV 830",
+          "2-part Inventions: E major, BWV 777, A major, BWV 783",
+          "3-part Inventions: a minor, BWV 799, b minor, BWV 801",
+          "Toccata in C minor, BWV 911",
+          "Toccata in D major, BWV 912"
+        ]
+      },
+      {
+        "composer": "C.P.E.Bach",
+        "compositions": [
+          "Sonata in A major, Wq. 55/4"
+        ]
+      },
+      {
+        "composer": "B.Bartók",
+        "compositions": [
+          "Sonatina",
+          "2 Romanian Dances, op.8a"
+        ]
+      },
+      {
+        "composer": "L.van Beethoven",
+        "compositions": [
+          "Sonata op.7 in Eb major",
+          "Sonata op.10 no.2 in F major",
+          "Sonata op.14 no.2 in G major",
+          "Sonata op.31 no.1 in G major",
+          "Sonata op.57 in f minor",
+          "Sonata op.106 in B-flat major",
+          "Sonata op.109 in E major",
+          "24 variations in D major, WoO 65"
+        ]
+      },
+      {
+        "composer": "J.Brahms",
+        "compositions": [
+          "Fantasias op.116",
+          "Rhapsody op.79 no.1 in b minor"
+        ]
+      },
+      {
+        "composer": "F.Chopin",
+        "compositions": [
+          "Ballade no.2 in F major, op.38",
+          "Scherzo no.3 in C-sharp minor, op.39",
+          "Sonata no.3 in b minor, op.58",
+          "Waltz in A-flat major, op.34",
+          "Polonaise in A-flat major, op.53",
+          "Nocturne in G major, op.37 no.2",
+          "Preludes op.28: no. 17,18",
+          "Etudes op.10 no.8,10,12, op.25 no.1,2,6,9,10,11,12",
+          "Mazurkas op.24",
+          "Mazurka op.7 no.1",
+          "Tarantella op.41"
+        ]
+      },
+      {
+        "composer": "F.Couperin",
+        "compositions": [
+          "14e Ordre: Les Carillons de Cythere",
+          "6e Ordre: Les Barycades Mysterieuses"
+        ]
+      },
+      {
+        "composer": "C.Debussy",
+        "compositions": [
+          "Estampes",
+          "L'Îsle joyeuse",
+          "Préludes:Les colines d'Anacapri",
+          "Minstrels",
+          "Etudes ”Pour les tierces”, „Pour les octaves”"
+        ]
+      },
+      {
+        "composer": "G.Enescu",
+        "compositions": [
+          "Suite op.10 in D major"
+        ]
+      },
+      {
+        "composer": "J.Francaix",
+        "compositions": [
+          "Sonate"
+        ]
+      },
+      {
+        "composer": "E.Grieg",
+        "compositions": [
+          "Lyrische Stücke: Notturno"
+        ]
+      },
+      {
+        "composer": "J.Haydn",
+        "compositions": [
+          "Sonataiîn E-flat major, Hob.XVI:49",
+          "Sonata n A-flat major, Hob.XVI:46",
+          "Andante con variazioni in f minor, Hob. XVII:6"
+        ]
+      },
+      {
+        "composer": "S.Huber",
+        "compositions": [
+          "Weisse Zwerge(2011)"
+        ]
+      },
+      {
+        "composer": "F.Liszt",
+        "compositions": [
+          "Sonata in b minor",
+          "Ballade no.2 in b minor",
+          "„Apres une lecture de Dante” Sonata quasi Fantasia",
+          "„Miserere d'après Palestrina” from „Harmonies Poétiques et Religieuses”",
+          "Etudes d'execution transcendante: no.5 ''Feux Follets'', no.6 ''Vision''",
+          "Etude after Paganini: ''La Chasse''",
+          "Etude de concert: ''Gnomenreigen''",
+          "„Der Lindenbaum” (transcription after F.Schubert)",
+          "„Die Forelle” (transcription after F.Schubert)",
+          "„Du bist die Ruh” (transcription after F.Schubert)"
+        ]
+      },
+      {
+        "composer": "W.A.Mozart",
+        "compositions": [
+          "Sonata K 280 in F major",
+          "Sonata K 283 in G major",
+          "Sonata K 311 in D major",
+          "Sonata K 457 in c minor",
+          "Sonatensatz K 400 in B-flat major",
+          "12 Variations ''Je suis Lindor'' K 354",
+          "Adagio in b minor, K 540",
+          "Gigue in G major, K 574"
+        ]
+      },
+      {
+        "composer": "F.Mendelssohn-Bartholdy",
+        "compositions": [
+          "Songs without words: ''Spinnerlied'' op.67 no.4",
+          "''Duetto'' op.38 no.6"
+        ]
+      },
+      {
+        "composer": "S.Prokofiev",
+        "compositions": [
+          "Sonata no. 7 , op.83",
+          "Toccata, op.11"
+        ]
+      },
+      {
+        "composer": "S.Rachmaninov",
+        "compositions": [
+          "Rhapsody on a theme by Paganini, op.43",
+          "Etudes-Tableaux op.39 no.1, 2, 3, 9",
+          "''Polichinelle'', op.3 no.4"
+        ]
+      },
+      {
+        "composer": "M.Ravel",
+        "compositions": [
+          "Miroirs: Alborada del Gracioso"
+        ]
+      },
+      {
+        "composer": "D.Scarlatti",
+        "compositions": [
+          "Sonata in A major, K 24, L495",
+          "Sonata in F-sharp minor, K25, L481",
+          "Sonata in G major, K 477, L 290"
+        ]
+      },
+      {
+        "composer": "R.Schumann",
+        "compositions": [
+          "Fantasy in C major, op.17",
+          "''Abegg'' Variations, op.1",
+          "Kreisleriana, op.16"
+        ]
+      },
+      {
+        "composer": "E.Schulhoff",
+        "compositions": [
+          "Variationen und Fugato über ein eigenes dorisches Thema, op.10"
+        ]
+      },
+      {
+        "composer": "F.Schubert",
+        "compositions": [
+          "Sonata in a minor, D 537 Sonata in a minor, D 784"
+        ]
+      },
+      {
+        "composer": "A.Scriabin",
+        "compositions": [
+          "Etude op.42 no.5 in C-sharp minor",
+          "Sonata no.3 in F-sharp minor, op.23"
+        ]
+      },
+      {
+        "composer": "D.Shostakovich",
+        "compositions": [
+          "Prelude and Fugue in D major, op.87 no.5"
+        ]
+      },
+      {
+        "composer": "P.I.Tchaikovsky",
+        "compositions": [
+          "The Seasons: January"
+        ]
+      },
+      {
+        "composer": "S.Toduţă",
+        "compositions": [
+          "Passacaglia"
+        ]
+      },
+      {
+        "composer": "H.P.Türk",
+        "compositions": [
+          "Träume (2011)"
+        ]
+      },
+      {
+        "composer": "D.Voiculescu",
+        "compositions": [
+          "Canonica: Canons no.11, 12"
+        ]
+      },
+      {
+        "composer": "A.von Zemlinsky",
+        "compositions": [
+          "Fantasien über Gedichte von R.Dehmel"
+        ]
+      }
+    ]
+  }
+}
