@@ -7,7 +7,8 @@ var models = require('../models/models.js');
 
 /* GET manage edit page. */
 router.get('/', function (request, response) {
-    backupDatabase();
+    // backupDatabase();
+    // applyBackup();
     if (request.cookies.loggedIn || request.cookies.loggedInDemo)
         response.render('manage');
     else
@@ -250,81 +251,19 @@ function writeToBackupFile(jsonObj) {
     });
 }
 
-function seedDatabase() {
-    var db = require('../database/data.json');
-    // db.about.forEach(function (a) {
-    //     new models.aboutSection({
-    //         title: a.title,
-    //         content: a.content
-    //     }).save(function (err, doc) {
-    //         if (err) console.log(err);
-    //         else console.log('<< Success inserting about section. >>');
-    //     });
-    // });
-    // db.concerts.forEach(function (c) {
-    //     new models.concert({
-    //         name: c.name,
-    //         date: c.date,
-    //         city: c.city,
-    //         location: c.location,
-    //         programme: c.programme
-    //     }).save(function (err, doc) {
-    //         if (err) console.log(err);
-    //         else console.log('<< Success inserting concert. >>');
-    //     });
-    // });
-    // db.media.photos.forEach(function (m) {
-    //     new models.mediaPhoto({
-    //         url: m.url,
-    //         active: m.active === "true",
-    //         alt: m.alt,
-    //         title: m.alt
-    //     }).save(function (err, doc) {
-    //         if (err) console.log(err);
-    //         else console.log('<< Success inserting media photo. >>');
-    //     });
-    // });
-    // db.media.videos.forEach(function (m) {
-    //     new models.mediaVideo({
-    //         title: m.title,
-    //         url: m.url,
-    //         ratio: m.ratio,
-    //         year: m.year,
-    //         imageUrl: m.imageUrl
-    //     }).save(function (err, doc) {
-    //         if (err) console.log(err);
-    //         else console.log('<< Success inserting media video. >>');
-    //     });
-    // });
-    db.repertoire.pianoConcertos.forEach(function (item) {
-        new models.repertoireItem({
-            type: 1, // 1-Piano concertos / 2-Chamber Music / 3-Solo piano
-            composer: item.composer,
-            compositions: item.compositions
-        }).save(function (err, doc) {
-            if (err) console.log(err);
-            else console.log('<< Success inserting piano concertos repertoire item. >>');
-        });
+function applyBackup() {
+    var db = require('../database/dbbackup_14_5_116');
+    db.aboutSection.forEach(function(item) {
+        addOrUpdateModel(item, 'aboutSection');
     });
-    db.repertoire.chamberMusic.forEach(function (item) {
-        new models.repertoireItem({
-            type: 2, // 1-Piano concertos / 2-Chamber Music / 3-Solo piano
-            composer: item.composer,
-            compositions: item.compositions
-        }).save(function (err, doc) {
-            if (err) console.log(err);
-            else console.log('<< Success inserting chamber music repertoire item. >>');
-        });
+    db.concert.forEach(function(item) {
+        addOrUpdateModel(item, 'concert');
     });
-    db.repertoire.soloPiano.forEach(function (item) {
-        new models.repertoireItem({
-            type: 3, // 1-Piano concertos / 2-Chamber Music / 3-Solo piano
-            composer: item.composer,
-            compositions: item.compositions
-        }).save(function (err, doc) {
-            if (err) console.log(err);
-            else console.log('<< Success inserting solo piano repertoire item. >>');
-        });
+    db.mediaPhoto.forEach(function(item) {
+        addOrUpdateModel(item, 'mediaPhoto');
+    });
+    db.mediaVideo.forEach(function (item) {
+        addOrUpdateModel(item, 'mediaVideo');
     });
 }
 

@@ -17,20 +17,12 @@ app.disable('view cache');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json({limit: '1mb'}));
-app.use(bodyParser.urlencoded({ extended: false, limit: '5mb'}));
+app.use(bodyParser.urlencoded({extended: false, limit: '5mb'}));
 app.use(cookieParser('bestsecretever'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-var releaseVersion = true;
-
-if(!releaseVersion)
-{
-    mongoose.connect('mongodb://104.197.170.248/av-dev');
-}
-else
-{
-    mongoose.connect('mongodb://104.197.170.248/av-prod');
-}
+// mongoose.connect('mongodb://104.197.170.248/av-prod');
+mongoose.connect('mongodb://iuliu:johnHancock84@ds015194.mlab.com:15194/heroku_0c2jjcr2');
 
 app.use('/', require('./routes/index'));
 app.use('/m', require('./routes/m'));
