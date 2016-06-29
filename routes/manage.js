@@ -7,7 +7,7 @@ var models = require('../models/models.js');
 
 /* GET manage edit page. */
 router.get('/', function (request, response) {
-    // backupDatabase();
+    backupDatabase();
     // applyBackup();
     if (request.cookies.loggedIn || request.cookies.loggedInDemo)
         response.render('manage');
@@ -233,7 +233,7 @@ function backupDatabase() {
             else {
                 propertiesAdded++;
                 jsonObj[item] = docs;
-                if (propertiesAdded == models.length - 1)
+                if (propertiesAdded == models.length)
                     writeToBackupFile(jsonObj);
             }
         });
@@ -264,6 +264,37 @@ function applyBackup() {
     });
     db.mediaVideo.forEach(function (item) {
         addOrUpdateModel(item, 'mediaVideo');
+    });
+    // db. .forEach(function (item) {
+    //     addOrUpdateModel(item, 'mediaVideo');
+    // });
+}
+
+function once() {
+    var db = require('../database/data_original.json');
+    db.repertoire.pianoConcertos.forEach(function(item) {
+        var repertoireItem = new models.repertoireItem({
+            type: 1,
+            composer: item.composer,
+            compositions: item.compositions
+        });
+        addOrUpdateModel(repertoireItem, 'repertoireItem');
+    });
+    db.repertoire.chamberMusic.forEach(function(item) {
+        var repertoireItem = new models.repertoireItem({
+            type: 2,
+            composer: item.composer,
+            compositions: item.compositions
+        });
+        addOrUpdateModel(repertoireItem, 'repertoireItem');
+    });
+    db.repertoire.soloPiano.forEach(function(item) {
+        var repertoireItem = new models.repertoireItem({
+            type: 3,
+            composer: item.composer,
+            compositions: item.compositions
+        });
+        addOrUpdateModel(repertoireItem, 'repertoireItem');
     });
 }
 
