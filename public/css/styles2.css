@@ -7,20 +7,24 @@ h2 {
 }
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-    color:    gold;
+    color: gold;
 }
+
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color:    white;
-    opacity:  1;
+    color: white;
+    opacity: 1;
 }
+
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color:    white;
+    color: white;
 }
+
 :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color:    white;
+    color: white;
 }
+
 :placeholder-shown { /* Standard (https://drafts.csswg.org/selectors-4/#placeholder) */
-    color:    gold;
+    color: gold;
 }
 
 .btn-enter {
@@ -41,7 +45,6 @@ h2 {
     background-color: rgba(255, 255, 255, .05);
 }
 
-
 .cool-input {
     padding: 5px 0px;
     font-family: 'Parisienne', cursive;
@@ -49,7 +52,7 @@ h2 {
     font-weight: 700;
     color: white;
     border: none;
-    width: 95%;
+    width: calc(100% - 26px);
     float: left;
     background-color: transparent;
     -webkit-transition: all .3s;
@@ -70,11 +73,11 @@ h2 {
     background-color: rgba(255, 50, 50, 0.1);
 }
 
-
-@media (max-width:768px) {
+@media (max-width: 768px) {
     h1 {
         font-size: 40px;
     }
+
     h2 {
         font-size: 25px;
         margin-top: 0;

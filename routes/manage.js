@@ -7,7 +7,7 @@ var models = require('../models/models.js');
 
 /* GET manage edit page. */
 router.get('/', function (request, response) {
-    backupDatabase();
+    // backupDatabase();
     // applyBackup();
     if (request.cookies.loggedIn || request.cookies.loggedInDemo)
         response.render('manage');
@@ -242,7 +242,7 @@ function backupDatabase() {
 
 function writeToBackupFile(jsonObj) {
     var currentDate = new Date();
-    var filename = "dbbackup_" + currentDate.getDate() + "_" + currentDate.getMonth() + "_" + currentDate.getYear() + ".json";
+    var filename = "dbbackup_" + currentDate.getDate() + "_" + (currentDate.getMonth() + 1) + "_" + currentDate.getFullYear() + ".json";
     fs.writeFile("./database/" + filename, JSON.stringify(jsonObj, null, 4), function (err) {
         if (err) {
             return console.log(err);

@@ -42,7 +42,11 @@
                             <div class="repertoire-composition"
                                  ng-repeat="composition in item.compositions track by $index">
                                 <span class="bullet">&bull;</span>
-                                <span ng-bind-html="composition | sanitize"></span>
+                                <span class="like-input" id="compositionName{{item._id}}7a6{{$index}}" ng-bind-html="composition | sanitize"></span>
+                                <span class="fa fa-pencil gold" title="Edit" id="btnEditCompositionName{{item._id}}7a6{{$index}}"
+                                      ng-click="enableCompositionNameEdit(item._id, $index)"></span>
+                                <span class="fa fa-check gold" title="Save" id="btnSaveCompositionName{{item._id}}7a6{{$index}}"
+                                      ng-click="saveCompositionNameEdit(item._id, $index)" style="display:none"></span>
                                 <span class="fa fa-remove" title="Remove"
                                       ng-click="removeComposition(item._id, $index)"></span>
                             </div>

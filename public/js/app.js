@@ -667,12 +667,52 @@ avModule
             });
         };
 
+        $scope.enableCompositionNameEdit = function(composerId, compositionId) {
+            $("#btnEditCompositionName" + composerId + '7a6' + compositionId).hide();
+            $("#btnSaveCompositionName" + composerId + '7a6' + compositionId).show();
+
+            var $inputComposition = $("#compositionName" + composerId + '7a6' + compositionId);
+            toggleContentEditable($inputComposition);
+            $($inputComposition).focus();
+            $($inputComposition).keydown(function (e) {
+                if (e.keyCode == 13 && !e.shiftKey) {
+                    e.preventDefault();
+                }
+            });
+            $($inputComposition).keyup(function (e) {
+                if (e.keyCode == 13 && !e.shiftKey) {
+                    $scope.saveCompositionNameEdit(composerId, compositionId);
+                }
+            });
+        };
+
+        $scope.saveCompositionNameEdit = function (composerId, compositionId) {
+            var newCompositionName = $("#compositionName" + composerId + '7a6' + compositionId).text().trim();;
+            var composerToEditFrom = $scope.repertoireItems.filter(function (item) {
+                return item._id == composerId
+            })[0];
+            var composerToEditFromToSend = angular.copy(composerToEditFrom);
+            composerToEditFromToSend.compositions[compositionId] = newCompositionName;
+            $.ajax({
+                url: "manage/repertoire/add",
+                type: "POST",
+                data: angular.toJson(composerToEditFromToSend),
+                contentType: "application/json",
+                success: function () {
+                    $("#btnEditCompositionName" + composerId + '7a6' + compositionId).show();
+                    $("#btnSaveCompositionName" + composerId + '7a6' + compositionId).hide();
+                    toggleContentEditable($("#compositionName" + composerId + '7a6' + compositionId));
+                    composerToEditFrom.compositions[compositionId] = newCompositionName;
+                    $scope.$apply();
+                    showNotification('Repertoire item updated');
+                },
+                error: function () {
+                    showNotification('Repertoire item couldn\'t be updated! :s', true);
+                }
+            });
+        };
+
         $scope.removeComposition = function (composerId, compositionId) {
-            if ($scope.repertoireItems) {
-                var selectedCategory = $scope.repertoireItems.filter(function (item) {
-                    return item.type == $scope.selectedCategoryIndex
-                });
-            }
             var composerToRemoveFrom = $scope.repertoireItems.filter(function (item) {
                 return item._id == composerId
             })[0];
@@ -681,7 +721,7 @@ avModule
             $.ajax({
                 url: "manage/repertoire/add",
                 type: "POST",
-                data: angular.toJson(composerToRemoveFrom),
+                data: angular.toJson(composerToRemoveFromToSend),
                 contentType: "application/json",
                 success: function () {
                     composerToRemoveFrom.compositions.splice(compositionId, 1);
@@ -695,12 +735,6 @@ avModule
         };
 
         $scope.addComposer = function () {
-            if ($scope.repertoireItems) {
-                var selectedCategory = $scope.repertoireItems.filter(function (item) {
-                    return item.type == $scope.selectedCategoryIndex
-                });
-            }
-
             var newComposer = {
                 "type": $scope.selectedCategoryIndex,
                 "composer": $("#newComposerName").text().trim(),
@@ -749,8 +783,8 @@ avModule
                 contentType: "application/json",
                 success: function () {
                     toggleContentEditable($("#composerName" + composerId));
-                    $("#btnSaveComposerName" + composerId).show();
-                    $("#btnEditComposerName" + composerId).hide();
+                    $("#btnEditComposerName" + composerId).show();
+                    $("#btnSaveComposerName" + composerId).hide();
                     showNotification('Composer name changed');
                 },
                 error: function () {
