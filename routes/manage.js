@@ -7,7 +7,7 @@ var models = require('../models/models.js');
 
 /* GET manage edit page. */
 router.get('/', function (request, response) {
-    // backupDatabase();
+    backupDatabase();
     // applyBackup();
     if (request.cookies.loggedIn || request.cookies.loggedInDemo)
         response.render('manage');

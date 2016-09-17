@@ -352,6 +352,8 @@ avModule
                 return 'be';
             if (city.indexOf('ital') > -1)
                 return 'it';
+            if (city.indexOf('turk') > -1)
+                return 'tr';
         }
 
         $scope.$watch('newConcert.city', function (newValue, oldValue) {
