@@ -354,6 +354,8 @@ avModule
                 return 'it';
             if (city.indexOf('turk') > -1)
                 return 'tr';
+            if (city.toLower().indexOf('u.s.a') > -1 || city.toLower().indexOf('s.u.a') > -1) || city.toLower().indexOf('united') > -1))
+                return 'us';
         }
 
         $scope.$watch('newConcert.city', function (newValue, oldValue) {
