@@ -354,7 +354,7 @@ avModule
                 return 'it';
             if (city.indexOf('turk') > -1)
                 return 'tr';
-            if (city.toLower().indexOf('u.s') > -1 || city.toLower().indexOf('s.u') > -1 || city.toLower().indexOf('united') > -1)
+            if (city.toLowerCase().indexOf('u.s') > -1 || city.toLowerCase().indexOf('s.u') > -1 || city.toLowerCase().indexOf('united') > -1)
                 return 'us';
         }
 
