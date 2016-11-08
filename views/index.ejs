@@ -172,7 +172,11 @@
                     <tr class="clickable" data-toggle="collapse" data-target="#concertinfo<%= item.date %>">
                         <th scope="row"><%= item.name %></th>
                         <td><%= dateformat(new Date(item.date * 1000), "dd.mm.yyyy") %></td>
-                        <td><%= item.city %></td>
+                        <td>
+                        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="margin-top: -4px;"
+                                     class="flag flag-<%= item.flag %>"/>
+                        <%= item.city %>
+                        </td>
                         <td><%= item.location %></td>
                     </tr>
                     <tr class="collapse" id="concertinfo<%= item.date %>">
