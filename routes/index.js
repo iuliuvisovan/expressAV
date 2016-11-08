@@ -47,6 +47,8 @@ router.get('/', function (request, response) {
 var getCountryByCity = (city) => {
     if (!city)
         return;
+    if (city.indexOf('US') > -1 || city.toLowerCase().indexOf('u.s') > -1 || city.toLowerCase().indexOf('u.s.') > -1 || city.toLowerCase().indexOf('united') > -1)
+        return 'us';
     city = city.toLowerCase();
     if (city.indexOf('aust') > -1)
         return 'at';
@@ -66,8 +68,7 @@ var getCountryByCity = (city) => {
         return 'it';
     if (city.indexOf('turk') > -1)
         return 'tr';
-    if (city.toLowerCase().indexOf('u.s') > -1 || city.toLowerCase().indexOf('s.u') > -1 || city.toLowerCase().indexOf('united') > -1)
-        return 'us';
+    
 }
 
 module.exports = router;

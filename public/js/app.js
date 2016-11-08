@@ -4,35 +4,29 @@ var hasSeenIntro = false;
 
 avModule.config(function ($routeProvider) {
     $routeProvider
-        .when('/',
-            {
-                controller: 'LandingController',
-                templateUrl: 'partials/manage_landing.html'
-            })
-        .when('/about',
-            {
-                controller: 'AboutController',
-                templateUrl: 'partials/manage_about.html'
-            })
-        .when('/concerts',
-            {
-                controller: 'ConcertsController',
-                templateUrl: 'partials/manage_concerts.html'
-            })
-        .when('/media',
-            {
-                controller: 'MediaController',
-                templateUrl: 'partials/manage_media.html'
-            })
-        .when('/repertoire',
-            {
-                controller: 'RepertoireController',
-                templateUrl: 'partials/manage_repertoire.html'
-            })
-        .otherwise(
-            {
-                redirectTo: '/'
-            });
+        .when('/', {
+            controller: 'LandingController',
+            templateUrl: 'partials/manage_landing.html'
+        })
+        .when('/about', {
+            controller: 'AboutController',
+            templateUrl: 'partials/manage_about.html'
+        })
+        .when('/concerts', {
+            controller: 'ConcertsController',
+            templateUrl: 'partials/manage_concerts.html'
+        })
+        .when('/media', {
+            controller: 'MediaController',
+            templateUrl: 'partials/manage_media.html'
+        })
+        .when('/repertoire', {
+            controller: 'RepertoireController',
+            templateUrl: 'partials/manage_repertoire.html'
+        })
+        .otherwise({
+            redirectTo: '/'
+        });
 });
 
 avModule
@@ -110,13 +104,13 @@ avModule
         if (!hasSeenIntro) {
             init();
             hasSeenIntro = true;
-        }
-        else
+        } else
             showTitle("youCanStart", 500, 0);
 
     })
     .controller('AboutController', function ($scope, aboutService, $route) {
         init();
+
         function init() {
             selectMenuItem($('[href="#/about"]'));
             doFunkyStuffAndThenShowPage(function () {
@@ -184,6 +178,7 @@ avModule
     })
     .controller('ConcertsController', function ($scope, concertService, $filter) {
         init();
+
         function init() {
             selectMenuItem($('[href="#/concerts"]'));
             $scope.editCancelled = true;
@@ -302,7 +297,9 @@ avModule
                     $.ajax({
                         url: "manage/concerts/remove",
                         type: "POST",
-                        data: {_id: targetId},
+                        data: {
+                            _id: targetId
+                        },
                         success: function () {
                             $("#" + targetId).fadeOut(function () {
                                 $scope.upcomingConcerts = $scope.upcomingConcerts.filter(function (concert) {
@@ -335,6 +332,8 @@ avModule
         $scope.getCountryByCity = function (city) {
             if (!city)
                 return;
+            if (city.indexOf('US') > -1 || city.toLowerCase().indexOf('u.s') > -1 || city.toLowerCase().indexOf('u.s.') > -1 || city.toLowerCase().indexOf('united') > -1)
+                return 'us';
             city = city.toLowerCase();
             if (city.indexOf('aust') > -1)
                 return 'at';
@@ -354,8 +353,6 @@ avModule
                 return 'it';
             if (city.indexOf('turk') > -1)
                 return 'tr';
-            if (city.toLowerCase().indexOf('u.s') > -1 || city.toLowerCase().indexOf('s.u') > -1 || city.toLowerCase().indexOf('united') > -1)
-                return 'us';
         }
 
         $scope.$watch('newConcert.city', function (newValue, oldValue) {
@@ -390,6 +387,7 @@ avModule
     })
     .controller('MediaController', function ($scope, mediaPhotosService, mediaVideosService) {
         init();
+
         function init() {
             selectMenuItem($('[href="#/media"]'));
             $('#newPhoto').hide();
@@ -482,7 +480,10 @@ avModule
             $.ajax({
                 url: "manage/mediaPhotos/remove",
                 type: "POST",
-                data: {_id: id, url: url},
+                data: {
+                    _id: id,
+                    url: url
+                },
                 success: function () {
                     $scope.mediaPhotos = $scope.mediaPhotos.filter(function (item) {
                         return item._id !== id;
@@ -504,7 +505,9 @@ avModule
             $.ajax({
                 url: "manage/mediaVideos/upload",
                 type: "POST",
-                data: angular.toJson({image: $scope.myCroppedImage}),
+                data: angular.toJson({
+                    image: $scope.myCroppedImage
+                }),
                 contentType: "application/json",
                 success: function (thumbnailUrl) {
                     showNotification('Video thumbnail added');
@@ -531,7 +534,9 @@ avModule
             $.ajax({
                 url: "manage/mediaVideos/removeVideoImage",
                 type: "POST",
-                data: angular.toJson({url: $scope.newVideo.imageUrl}),
+                data: angular.toJson({
+                    url: $scope.newVideo.imageUrl
+                }),
                 contentType: "application/json"
             });
             $("#divNewVideo").fadeOut();
@@ -570,7 +575,10 @@ avModule
                     $.ajax({
                         url: "manage/mediaVideos/remove",
                         type: "POST",
-                        data: {_id: id, imageUrl: imageUrl},
+                        data: {
+                            _id: id,
+                            imageUrl: imageUrl
+                        },
                         success: function () {
                             $scope.mediaVideos = $scope.mediaVideos.filter(function (item) {
                                 return item._id !== id;
@@ -588,6 +596,7 @@ avModule
     })
     .controller('RepertoireController', function ($scope, repertoireService) {
         init();
+
         function init() {
             selectMenuItem($('[href="#/repertoire"]'));
             repertoireService.getRepertoireItems().then(function (categories) {
@@ -614,7 +623,7 @@ avModule
                         }
                     });
                 }, 700);
-                $(".like-input").click(function() {
+                $(".like-input").click(function () {
                     return false;
                 });
             });
@@ -671,7 +680,7 @@ avModule
             });
         };
 
-        $scope.enableCompositionNameEdit = function(composerId, compositionId) {
+        $scope.enableCompositionNameEdit = function (composerId, compositionId) {
             $("#btnEditCompositionName" + composerId + '7a6' + compositionId).hide();
             $("#btnSaveCompositionName" + composerId + '7a6' + compositionId).show();
 
@@ -749,7 +758,7 @@ avModule
             $("#newComposerDiv").fadeOut();
         };
 
-        $scope.enableComposerNameEdit = function(composerId, $event) {
+        $scope.enableComposerNameEdit = function (composerId, $event) {
             if ($event.stopPropagation) $event.stopPropagation();
             $event.cancelBubble = true;
             $event.returnValue = false;
@@ -771,7 +780,7 @@ avModule
             });
         };
 
-        $scope.saveComposerNameEdit = function(composerId, $event) {
+        $scope.saveComposerNameEdit = function (composerId, $event) {
             if ($event.stopPropagation) $event.stopPropagation();
             $event.cancelBubble = true;
             $event.returnValue = false;
@@ -817,7 +826,9 @@ avModule
                     $.ajax({
                         url: "manage/repertoire/removeComposer",
                         type: "POST",
-                        data: angular.toJson({_id: id}),
+                        data: angular.toJson({
+                            _id: id
+                        }),
                         contentType: "application/json",
                         success: function () {
                             $scope.repertoireItems = $scope.repertoireItems.filter(function (item) {
@@ -875,8 +886,7 @@ function showNotification(notificationText, error) {
         setTimeout(function () {
             $("#changesSaveSuccess").fadeOut();
         }, 2000);
-    }
-    else {
+    } else {
         $("#notificationTextError").html(notificationText);
         $("#changesSaveError").fadeIn();
         setTimeout(function () {
@@ -889,8 +899,7 @@ function toggleContentEditable(item) {
     if ($(item).prop('contenteditable') == 'true') {
         $(item).prop('contenteditable', 'false');
         $(item).css('border', 'none');
-    }
-    else {
+    } else {
         $(item).prop('contenteditable', 'true');
         $(item).css('border', '1px solid rgba(255, 255, 255, 0.4)');
         $(item).css('padding', '10px');
