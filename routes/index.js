@@ -17,7 +17,10 @@ router.get('/', function (request, response) {
         data.aboutSections = docs;
     });
     mongoose.model('concert').find({}, function (err, docs) {
-        data.concerts = docs.map(x => { x.flag = getCountryByCity(x.city); return x; });;
+        data.concerts = docs.map(x => {
+            x.flag = getCountryByCity(x.city);
+            return x;
+        });;
     });
     mongoose.model('mediaPhoto').find({}, function (err, docs) {
         data.mediaPhotos = docs;
@@ -63,6 +66,8 @@ var getCountryByCity = (city) => {
         return 'it';
     if (city.indexOf('turk') > -1)
         return 'tr';
+    if (city.toLowerCase().indexOf('u.s') > -1 || city.toLowerCase().indexOf('s.u') > -1 || city.toLowerCase().indexOf('united') > -1)
+        return 'us';
 }
 
 module.exports = router;
