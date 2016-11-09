@@ -22,7 +22,7 @@ app.use(cookieParser('bestsecretever'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // mongoose.connect('mongodb://104.197.170.248/av-prod');
-mongoose.connect('mongodb://iuliu:johnHancock84@ds015194.mlab.com:15194/heroku_0c2jjcr2');
+mongoose.connect(require('./sensitive/credentials').mongoauth);
 
 app.use('/', require('./routes/index'));
 app.use('/m', require('./routes/m'));
