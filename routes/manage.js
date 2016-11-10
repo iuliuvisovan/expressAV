@@ -103,7 +103,7 @@ router.get('/mediaVideos', function (request, response) {
 router.post('/mediaVideos/remove', function (request, response) {
     if (request.body.imageUrl)
         var localImage = "public/" + request.body.imageUrl
-        fs.access(localImage, fs.constants.R_OK | fs.constants.W_OK, (err) => {
+        fs.access(localImage, fs.F_OK, (err) => {
             !err && fs.unlinkSync(localImage);
         });
     removeById('mediaVideo', request.body._id, response);
