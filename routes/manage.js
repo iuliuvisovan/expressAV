@@ -102,14 +102,16 @@ router.get('/mediaVideos', function (request, response) {
 
 router.post('/mediaVideos/remove', function (request, response) {
     if (request.body.imageUrl)
-        fs.unlinkSync("public/" + request.body.imageUrl);
+        var localImage = "public/" + request.body.imageUrl
+        fs.access(localImage, fs.constants.R_OK | fs.constants.W_OK, (err) => {
+            !err && fs.unlinkSync(localImage);
+        });
     removeById('mediaVideo', request.body._id, response);
 });
 
 router.post('/mediaPhotos/remove', function (request, response) {
     if (request.body.url)
-        fs.unlink("public/" + request.body.url, function (error) {
-        });
+        fs.unlink("public/" + request.body.url, function (error) {});
     removeById('mediaPhoto', request.body._id, response);
 
 });
@@ -177,25 +179,26 @@ function sendModel(modelName, response) {
                     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
                 });
                 response.send(sortedDocs);
-            }
-            else
+            } else
                 response.send(docs);
-        }
-        else
+        } else
             response.status(500).send(err);
     });
 }
 
 function addOrUpdateModel(model, modelName, response) {
     console.log("Attempting to save object: \n " + model);
-    var query = {'_id': model._id};
-    mongoose.model(modelName).findOneAndUpdate(query, model, {upsert: true}, function (error, doc) {
+    var query = {
+        '_id': model._id
+    };
+    mongoose.model(modelName).findOneAndUpdate(query, model, {
+        upsert: true
+    }, function (error, doc) {
         if (error) {
             console.log("Error occured when trying to add / update! " + error);
             if (response)
                 response.status(500).send(error);
-        }
-        else {
+        } else {
             console.log("Successfullly added / updated model to database.");
             if (response)
                 response.status(200).send(model._id);
@@ -205,13 +208,13 @@ function addOrUpdateModel(model, modelName, response) {
 
 function removeById(modelName, id, response) {
     console.log("Attempting to remove " + modelName + " with ID " + id);
-    mongoose.model(modelName).find({_id: id}).remove(function (error) {
+    mongoose.model(modelName).find({
+        _id: id
+    }).remove(function (error) {
         if (error) {
             console.log("Error removing item from database: " + error);
             response.status(500).send(error);
-        }
-
-        else {
+        } else {
             console.log("Success removing item from database.");
             response.status(200).send("Successfully removed model from database: id: " + id);
         }
@@ -253,13 +256,13 @@ function writeToBackupFile(jsonObj) {
 
 function applyBackup() {
     var db = require('../database/dbbackup_14_5_116');
-    db.aboutSection.forEach(function(item) {
+    db.aboutSection.forEach(function (item) {
         addOrUpdateModel(item, 'aboutSection');
     });
-    db.concert.forEach(function(item) {
+    db.concert.forEach(function (item) {
         addOrUpdateModel(item, 'concert');
     });
-    db.mediaPhoto.forEach(function(item) {
+    db.mediaPhoto.forEach(function (item) {
         addOrUpdateModel(item, 'mediaPhoto');
     });
     db.mediaVideo.forEach(function (item) {
@@ -272,7 +275,7 @@ function applyBackup() {
 
 function once() {
     var db = require('../database/data_original.json');
-    db.repertoire.pianoConcertos.forEach(function(item) {
+    db.repertoire.pianoConcertos.forEach(function (item) {
         var repertoireItem = new models.repertoireItem({
             type: 1,
             composer: item.composer,
@@ -280,7 +283,7 @@ function once() {
         });
         addOrUpdateModel(repertoireItem, 'repertoireItem');
     });
-    db.repertoire.chamberMusic.forEach(function(item) {
+    db.repertoire.chamberMusic.forEach(function (item) {
         var repertoireItem = new models.repertoireItem({
             type: 2,
             composer: item.composer,
@@ -288,7 +291,7 @@ function once() {
         });
         addOrUpdateModel(repertoireItem, 'repertoireItem');
     });
-    db.repertoire.soloPiano.forEach(function(item) {
+    db.repertoire.soloPiano.forEach(function (item) {
         var repertoireItem = new models.repertoireItem({
             type: 3,
             composer: item.composer,
