@@ -113,23 +113,23 @@
                 <h3 class="section-subheading text-muted">Aurelia Vișovan's biography</h3>
             </div>
         </div>
-        <div class="row text-center" style="margin-top: -45px;">
+        <div class="row text-center" style="margin-top: -50px;">
             <div class="col-md-12">
                 <div class="col-md-9">
-                        <p class="text-muted">
-                            <%= data.aboutSections[0].content + ' ' %>
-                            <%= data.aboutSections[1].content + ' ' %>
-                            <%= data.aboutSections[2].content + ' ' %>
+                        <p class="text-muted" style="text-align: left">
+                            <%- [0,1,2].map(x => data.aboutSections[x].content).join('')
+                                .replace(/\*\*\*/g, '<br/>' + '&nbsp;'.repeat(10))
+                            %>
                         </p>
                 </div>
-                <div class="col-md-3" style="overflow: hidden; padding-right: 51px; border-radius: 7px; margin-top: 10px">
+                <div class="col-md-3" style="overflow: hidden; padding-right: 51px; border-radius: 7px; margin-top: 40px">
                     <img src="/img/carousel/aurelia-piano2.jpg" alt="Aurelia 2018" style="height: 100%; width: 242%;margin-left: -77%;">
                 </div>
             </div>
         </div>
        
         <div style="margin-top: 40px; margin-bottom: -40px">
-            <div style="font-size: 20px"> Download official biography: 
+            <div style="font-size: 19px"> Download official biography: 
                 <a target="_blank" href="https://docs.google.com/document/d/1ksOI1dt21BBhEylxfLv9RsjN6K0L2RDArAZr3BknOVQ/edit" style="margin-left: 5px"><span class="flag-icon flag-icon-gb" title="English"></span> EN</a> | <a target="_blank" href="https://docs.google.com/document/d/1tRLhDrkplgyGMmw0SqeUKujfyDHVR4MgeyBRaYdvqWs/edit"><span class="flag-icon flag-icon-de" title="German"></span> DE</a>
             </div>
             <div style="font-size: 16px">Short version: 
@@ -388,8 +388,15 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <a href="http://www.iuliu.net" target="_blank" class="rigid-link"
-                   title="Website built and mantained by www.iuliu.net"><span class="copyright">Copyright &copy; Iuliu Vișovan 2015</span></a>
+                <a style="display: block" href="http://www.iuliu.net" target="_blank" class="rigid-link" title="Website built and mantained by www.iuliu.net">
+                    <span class="copyright">Copyright &copy; Iuliu Vișovan 2015</span>
+                </a>
+                <span title="Photographs credits goes to Felix Abrudan & Sanziana Craciun" class="copyright">
+                    Photo credits:  &copy; 
+                    <a class="rigid-link" href="http://felixabrudan.eu">Felix Abrudan</a>
+                    & 
+                    <a class="rigid-link" href="https://facebook.com/sanzianacraciunphotography/">Sanziana Craciun</a> 
+                </span>
             </div>
             <div class="col-md-4">
                 <div class="fb-like" data-href="https://www.facebook.com/AureliaVisovanOfficial" data-layout="standard"
