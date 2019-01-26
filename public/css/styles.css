@@ -1,3 +1,7 @@
+html {
+    overflow-x: hidden;
+}
+
 body {
     overflow-x: hidden;
     font-family: "Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -933,4 +937,42 @@ ul.social-buttons li a:active {
 
 img::-moz-selection {
     background: 0 0;
+}
+
+.album-link div:hover div {
+    transition: opacity 0.2s ease-in-out;
+    opacity: 0.9!important;
+}
+
+@media(max-width: 1200px) {
+    .new-release {
+        font-size: 29px!important;
+    }
+}
+
+@media(max-width: 992px) {
+    .new-release {
+        font-size: 102px!important;
+    }
+}
+
+@media(max-width: 768px) {
+    .new-release {
+        font-size: 12.5vw!important;
+    }
+}
+
+.clicked .bullet {
+    display: none;
+}
+
+@media(max-width: 768px) {
+    .navbar-brand.page-scroll {
+        font-size: 34px;
+    }
+}
+
+.navbar-toggle {
+    margin-top: 9px;
+    margin-bottom: 9px;
 }

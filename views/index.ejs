@@ -40,7 +40,7 @@
 <body id="page-top" class="index">
 
 <!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
+<nav class="navbar navbar-default navbar-fixed-top" style="width: 100vw">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -60,8 +60,11 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
-                <li>
-                    <a class="page-scroll" href="#about" title="Learn more about Aurelia">About</a>
+                <li onclick="$(this).addClass('clicked')">
+                    <a class="page-scroll" href="#about" title="Learn more about Aurelia">
+                        About
+                        <div class="bullet" style="position: absolute; width: 9px; height: 9px; color: gold; top: 15px; left: 69px; z-index: 10; background-color: gold; border-radius: 100%;"></div>
+                    </a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#concerts"
@@ -122,9 +125,31 @@
                             %>
                         </p>
                 </div>
-                <div class="col-md-3" style="overflow: hidden; padding-right: 51px; border-radius: 7px; margin-top: 40px">
-                    <img src="/img/carousel/aurelia-piano2.jpg" alt="Aurelia 2018" style="height: 100%; width: 242%;margin-left: -77%;">
+                <div class="col-md-3" style="overflow: hidden; padding-right: 51px; border-radius: 4px; margin-top: 40px">
+                    <img src="/img/carousel/aurelia-piano2.jpg" alt="Aurelia 2018" style="height: 100%; width: 242%; margin-left: -77%;">
                 </div>
+                    <a target="_blank" class="album-link" href="https://open.spotify.com/album/7Gq3QgfQv92l1JWuIZOBHL?si=7ulKea7XS2m1J7kqV-yLmQ">
+                    <div class="col-md-3" style="overflow: hidden; margin-top: 30px; padding: 0">
+                        <img src="/img/about/cd-cover.png" alt="Aurelia Roots Album" style="height: 100%; width: 100%; border-radius: 8px;">
+                        <div class="new-release" style="
+                            text-transform: uppercase;
+                            color: white;
+                            position: absolute;
+                            font-size: 35px;
+                            left: 8px;
+                            bottom: -7px;
+                            opacity: 0.6;
+                            font-family: sans-serif;
+                            font-weight: bold;
+                            transform: rotate(-45deg);
+                            transform-origin: 0 0;
+                            letter-spacing: 7px;
+                            white-space: nowrap;
+                        ">
+                        New release
+                     </div>
+                </div>
+                </a>
             </div>
         </div>
        
@@ -266,7 +291,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <ul class="timeline">
-                    <% var right = false; data.mediaVideos.forEach(function (item) { %>
+                    <% var right = false; data.mediaVideos.sort((a,b) => b.year - a.year).forEach(function (item) { %>
                     <li class="<%= right ? 'timeline-inverted' : '' %>">
                         <div class="timeline-image">
                             <!-- <img class="img-circle img-responsive" src="<%= item.imageUrl %>"
