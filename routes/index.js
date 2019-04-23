@@ -72,7 +72,8 @@ var getCountryByCity = (city) => {
         return 'nl';
     if (city.indexOf('holl') > -1)
         return 'nl';
-    
+    if (city.indexOf('gree') > -1)
+        return 'gr';
 }
 
 module.exports = router;

@@ -353,6 +353,10 @@ avModule
                 return 'it';
             if (city.indexOf('turk') > -1)
                 return 'tr';
+            if (city.indexOf('nether') > -1)
+                return 'nl';
+            if (city.indexOf('holl') > -1)
+                return 'nl';
             if (city.indexOf('gree') > -1)
                 return 'gr';
         }
