@@ -180,7 +180,7 @@
                     <tbody>
                     <% data.concerts
                             .filter(function (item) {
-                                return new Date(item.date * 1000) >= new Date();
+                                return item.date * 1000 >= (+new Date() - 86400000);
                             }).sort(function (a, b) {
                                 return a.date - b.date
                             }).forEach(function(item) { %>
@@ -215,9 +215,9 @@
                     <tbody>
                     <% data.concerts
                             .filter(function (item) {
-                                return new Date(item.date * 1000) < new Date();
+                                return item.date * 1000 < (+new Date() - 86400000);
                             }).sort(function (a, b) {
-                                return a.date - b.date
+                                return b.date - a.date
                             }).forEach(function(item) { %>
                     <tr>
                         <td><%= item.name %></td>
