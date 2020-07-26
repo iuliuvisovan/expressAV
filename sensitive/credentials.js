@@ -3,5 +3,5 @@
 // }
 
 module.exports = {
-    mongoauth: "mongodb+srv://iuliu:johnHancock84@heroku-0c2jjcr2.yfisz.mongodb.net/heroku_0c2jjcr2?retryWrites=true&w=majority"
+    mongoauth: "mongodb+srv://iuliuvisovan:johnHancock85@heroku-0c2jjcr2.yfisz.mongodb.net/heroku_0c2jjcr2?retryWrites=true&w=majority"
 }
