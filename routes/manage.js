@@ -89,6 +89,8 @@ const uploadImageToS3 = multer({
 
       const imageKey = `media-photos/${+new Date()}-${file.originalname}`;
 
+      req.imageKey = imageKey;
+
       cb(null, imageKey);
     },
   }),
@@ -104,6 +106,7 @@ const createDbEntry = async (req, res, next) => {
         active: true,
         alt: 'Aurelia Vișovan Carousel Image',
         title: 'Aurelia Vișovan',
+        key: req.imageKey,
       }),
       'mediaPhoto'
     );
@@ -115,50 +118,30 @@ const createDbEntry = async (req, res, next) => {
 
 router.post('/mediaPhotos/upload', uploadImageToS3, createDbEntry);
 
-// router.post('/mediaPhotos/upload', (request, response) => {
-//   var formidable = require('formidable'),
-//     form = new formidable.IncomingForm();
-//   form.parse(request);
-
-//   form.on('end', (fields, files) => {
-//     var tempPath = this.openedFiles[0].path;
-//     var newFileLocation = './public/img/carousel/';
-//     var newImageName = 'aurelia-piano' + +new Date() + '.jpg';
-//     var newImageFullName = newFileLocation + newImageName;
-//     fs.copy(tempPath, newImageFullName, function (err) {
-//       if (err) {
-//         console.error(err);
-//       } else {
-//         console.log('Successfully uploaded new image: ' + newImageFullName);
-//         addOrUpdateModel(
-//           new MediaPhoto({
-//             url: '/img/carousel/' + newImageName,
-//             active: true,
-//             alt: 'Aurelia Visovan Carousel Image',
-//             title: 'Aurelia Visovan',
-//           }),
-//           'mediaPhoto'
-//         );
-//         response.status(200).send('/img/carousel/' + newImageName);
-//       }
-//     });
-//   });
-// });
-
 router.get('/mediaVideos', function (request, response) {
   sendModel('mediaVideo', response);
 });
 
 router.post('/mediaVideos/remove', function (request, response) {
-  if (request.body.imageUrl) var localImage = 'public/' + request.body.imageUrl;
-  fs.access(localImage, fs.F_OK, (err) => {
-    !err && fs.unlinkSync(localImage);
-  });
   removeById('mediaVideo', request.body._id, response);
 });
 
-router.post('/mediaPhotos/remove', function (request, response) {
-  removeById('mediaPhoto', request.body._id, response);
+router.post('/mediaPhotos/remove', async (request, response) => {
+  const { _id } = request.body;
+
+  const image = await MediaPhoto.findById(_id);
+
+  console.log('image', image);
+
+  await new AWS.S3().deleteObject({ Bucket: process.env.AWS_BUCKET_NAME, Key: image.key }, (err, data) => {
+    if (err) {
+      if (response) {
+        return response.status(500).send(err);
+      }
+    } else {
+      removeById('mediaPhoto', _id, response);
+    }
+  });
 });
 
 router.post('/mediaVideos/save', function (request, response) {

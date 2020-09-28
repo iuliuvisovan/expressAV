@@ -1,150 +1,119 @@
 <!-- Media section -->
 <header id="media" class="section">
-    <div class="container">
-        <div class="intro-text" style="position: relative;">
-            <h1 class="section-title"><span style="color: gold">#</span>media</h1>
-            <div class="line-underline"></div>
-        </div>
-        <div class="section-editor" style="padding-top: 120px; display: none">
-            <div id="divMediaPhotos" style="display: none" class="col-md-6">
-                <div class="media-container">
-                    <a onclick="$('#newPhoto').fadeIn()" class="btn btn-primary" style="position: relative;">
-                        <i style="color: gold" class="fa fa-plus"></i> New photo
-                    </a>
-                    <div id="newPhoto" class="new-image no-expand">
-                        <form id="frmNewImage" action="/manage/mediaPhotos/upload" method="POST"
-                              enctype="multipart/form-data">
-                            <button class="btn btn-primary btn-upload clickable no-expand"
-                                    style="font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;">
-                                <i id="iconSaveWithLoading" class="fa fa-upload"></i> Upload
-                                <input onclick="this.value = null" id="newImage" onclose="this.value = null" type="file"
-                                       name="image"/>
-                            </button>
-                        </form>
-                        <br><br>
-                        <div onclick="$('#newPhoto').fadeOut()" title="Cancel" class="btn-remove">
-                            <span class="glyphicon glyphicon-remove" style="color: white; visibility: visible;"></span>
-                        </div>
-                    </div>
-                    <span class="fa fa-image icon-watermark"></span>
-                    <div class="media-photo" ng-repeat="photo in mediaPhotos | orderBy:'-_id'">
-                        <div ng-click="removePhoto(photo._id, photo.url)" title="Remove" class="btn-remove">
-                            <span id="iconRemoveWithLoading" class="glyphicon glyphicon-remove"
-                                  style="color: white"></span>
-                        </div>
-                        <img title="{{photo.title}}" ng-src="{{photo.url}}" alt="{{photo.alt}}">
-                    </div>
-                </div>
-            </div>
-            <div id="divMediaVideos" style="display: none" class="col-md-6">
-                <div class="media-container col-md-12">
-                    <a ng-click="showNewVideo()" class="btn btn-primary">
-                        <i style="color: gold" class="fa fa-plus"></i> New video
-                    </a>
-                    <span class="fa fa-film icon-watermark"></span>
-                    <div id="divNewVideo" style="display: none; border: 1px dashed gold" class="media-video new col-md-12">
-                        <div class="media-video-title col-md-12" style="padding-left: 0">
-                            <div class="overlap-wrapper">
-                                <span class="glyphicon glyphicon-font overlap-icon"></span>
-                                <input ng-model="newVideo.title" placeholder="New video title" title="New video title"
-                                       onfocus="this.select()"/>
-                            </div>
-                            <div class="overlap-wrapper">
-                                <span class="glyphicon glyphicon-link overlap-icon"></span>
-                                <input style=";"
-                                       ng-model="newVideo.url" placeholder="New video link" title="New video link"
-                                       onfocus="this.select()"/>
-                            </div>
-                        </div>
-
-                        <div class="col-md-3 media-video-left">
-                            <div data-toggle="modal" data-target="#modalAddImage" class="media-video-image-wrapper">
-                                <img id="newVideoThumbnail" class="media-video-image img-circle img-responsive"
-                                     ng-src="{{ newVideo.imageUrl || '/img/video_photo_default.png' }}"
-                                     style="background-color: transparent; border: 2px dashed white; background-color: rgba(255, 255, 255, 0.1)"
-                                     alt="Default">
-                                <div class="button-over-image">
-                                    <span title="Change image" class="fa fa-pencil"></span>
-                                </div>
-                            </div>
-                            <span ng-bind="newVideo.year" class="year"></span>
-                        </div>
-                        <div class="col-md-9 media-video-right">
-                            <div class="embed-responsive embed-responsive-{{newVideo.ratio}}">
-                                <iframe width="420" height="315" ng-src="{{newVideo.url | trusted}}"
-                                        allowfullscreen=""></iframe>
-                            </div>
-                        </div>
-                        <div class="btn-primary-group">
-                            <a ng-click="cancelNewVideo()" class="btn btn-primary no-expand" >
-                                <span class="glyphicon glyphicon-remove-sign" style="color: white"></span>
-                                Cancel
-                            </a>
-                            <a ng-click="saveNewVideo()" id="btnSaveNewVideo" class="btn btn-primary disabled no-expand">
-                                <span class="glyphicon glyphicon-ok" style="color: white"></span>
-                                Save
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="media-video col-md-12" ng-repeat="video in mediaVideos | orderBy: '-_id'">
-                        <div class="media-video-title col-md-12">
-                            {{ video.title }}
-                            <span ng-click="removeVideo(video._id, video.imageUrl)" class="fa fa-remove media-video-option" title="Remove"></span>
-                        </div>
-                        <div class="col-md-3 media-video-left">
-                            <div class="media-video-image-wrapper">
-                                <img class="media-video-image img-circle img-responsive"
-                                     ng-src="{{video.imageUrl | trusted}}"
-                                     alt="Aurelia {{video.year}}">
-                            </div>
-                            <span class="year">{{video.year}}</span>
-                        </div>
-                        <div class="col-md-9 media-video-right">
-                            <div class="embed-responsive embed-responsive-{{video.ratio}}">
-                                <iframe width="420" height="315" ng-src="{{video.url | trusted}}"
-                                        allowfullscreen=""></iframe>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="container">
+    <div class="intro-text" style="position: relative">
+      <h1 class="section-title"><span style="color: gold">#</span>media</h1>
+      <div class="line-underline"></div>
     </div>
+    <div class="section-editor" style="padding-top: 120px; display: none">
+      <div id="divMediaPhotos" style="display: none" class="col-md-6">
+        <div class="media-container">
+          <a onclick="$('#newPhoto').fadeIn()" class="btn btn-primary" style="position: relative"> <i style="color: gold" class="fa fa-plus"></i> New photo </a>
+          <div id="newPhoto" class="new-image no-expand">
+            <form id="frmNewImage" action="/manage/mediaPhotos/upload" method="POST" enctype="multipart/form-data">
+              <button class="btn btn-primary btn-upload clickable no-expand" style="font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+                <i id="iconSaveWithLoading" class="fa fa-upload"></i> Upload
+                <input onclick="this.value = null" id="newImage" onclose="this.value = null" type="file" name="image" />
+              </button>
+            </form>
+            <br /><br />
+            <div onclick="$('#newPhoto').fadeOut()" title="Cancel" class="btn-remove">
+              <span class="glyphicon glyphicon-remove" style="color: white; visibility: visible"></span>
+            </div>
+          </div>
+          <span class="fa fa-image icon-watermark"></span>
+          <div class="media-photo" ng-repeat="photo in mediaPhotos | orderBy:'-_id'">
+            <div ng-click="removePhoto(photo._id, photo.url)" title="Remove" class="btn-remove">
+              <span id="iconRemoveWithLoading" class="glyphicon glyphicon-remove" style="color: white"></span>
+            </div>
+            <img title="{{photo.title}}" ng-src="{{photo.url}}" alt="{{photo.alt}}" />
+          </div>
+        </div>
+      </div>
+      <div id="divMediaVideos" style="display: none" class="col-md-6">
+        <div class="media-container col-md-12">
+          <a ng-click="showNewVideo()" class="btn btn-primary"> <i style="color: gold" class="fa fa-plus"></i> New video </a>
+          <span class="fa fa-film icon-watermark"></span>
+          <div id="divNewVideo" style="display: none; border: 1px dashed gold" class="media-video new col-md-12">
+            <div class="media-video-title col-md-12" style="padding-left: 0">
+              <div class="overlap-wrapper">
+                <span class="glyphicon glyphicon-font overlap-icon"></span>
+                <input ng-model="newVideo.title" placeholder="New video title" title="New video title" onfocus="this.select()" />
+              </div>
+              <div class="overlap-wrapper">
+                <span class="glyphicon glyphicon-link overlap-icon"></span>
+                <input ng-model="newVideo.url" placeholder="New video link" title="New video link" onfocus="this.select()" />
+              </div>
+            </div>
+
+            <div class="col-md-3 media-video-left">
+              <span ng-bind="newVideo.year" class="year"></span>
+            </div>
+            <div class="col-md-9 media-video-right">
+              <div class="embed-responsive embed-responsive-{{newVideo.ratio}}">
+                <iframe width="420" height="315" ng-src="{{newVideo.url | trusted}}" allowfullscreen=""></iframe>
+              </div>
+            </div>
+            <div class="btn-primary-group">
+              <a ng-click="cancelNewVideo()" class="btn btn-primary no-expand">
+                <span class="glyphicon glyphicon-remove-sign" style="color: white"></span>
+                Cancel
+              </a>
+              <a ng-click="saveNewVideo()" id="btnSaveNewVideo" class="btn btn-primary disabled no-expand">
+                <span class="glyphicon glyphicon-ok" style="color: white"></span>
+                Save
+              </a>
+            </div>
+          </div>
+
+          <div class="media-video col-md-12" ng-repeat="video in mediaVideos | orderBy: '-_id'">
+            <div class="media-video-title col-md-12">
+              <div class="video-title">{{ video.title }}</div>
+              <span ng-click="removeVideo(video._id, video.imageUrl)" class="fa fa-remove media-video-option" title="Remove"></span>
+            </div>
+            <div class="col-md-3 media-video-left">
+              <span class="year">{{video.year}}</span>
+            </div>
+            <div class="col-md-9 media-video-right">
+              <div class="embed-responsive embed-responsive-{{video.ratio}}">
+                <iframe width="420" height="315" ng-src="{{video.url | trusted}}" allowfullscreen=""></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
 
 <!-- Modal to add image -->
 <div id="modalAddImage" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title"><i class="fa fa-picture-o"></i> Add video representative image/thumbnail</h4>
-            </div>
-            <div class="modal-body">
-                <button class="btn btn-primary btn-upload clickable no-expand"
-                        style="font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-                         background-color: white; color: #555; border: 2px dashed dodgerblue; margin-bottom: 5px;">
-                    <i id="iconSaveWithLoading2" class="fa fa-upload"></i> Choose
-                    <input onclick="this.value = null" id="inputVideoImage" type="file" name="image"/>
-                </button>
-                <div class="cropArea">
-                    <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
-                </div>
-                <div style="font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-                text-transform: uppercase; text-align: center;">
-                    Cropped Image:
-                </div>
-                <div style="text-align: center;">
-                    <img ng-src="{{myCroppedImage}}"/>
-                </div>
-            </div>
-            <div class="modal-footer" style="text-align: center; padding: 0 15px">
-                <button type="button" ng-click="uploadVideoImage()" class="btn btn-primary-small"
-                        style="font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif;">Upload
-                </button>
-            </div>
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><i class="fa fa-picture-o"></i> Add video representative image/thumbnail</h4>
+      </div>
+      <div class="modal-body">
+        <button
+          class="btn btn-primary btn-upload clickable no-expand"
+          style="font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: white; color: #555; border: 2px dashed dodgerblue; margin-bottom: 5px"
+        >
+          <i id="iconSaveWithLoading2" class="fa fa-upload"></i> Choose
+          <input onclick="this.value = null" id="inputVideoImage" type="file" name="image" />
+        </button>
+        <div class="cropArea">
+          <img-crop image="myImage" result-image="myCroppedImage"></img-crop>
         </div>
+        <div style="font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif; text-transform: uppercase; text-align: center">Cropped Image:</div>
+        <div style="text-align: center">
+          <img ng-src="{{myCroppedImage}}" />
+        </div>
+      </div>
+      <div class="modal-footer" style="text-align: center; padding: 0 15px">
+        <button type="button" ng-click="uploadVideoImage()" class="btn btn-primary-small" style="font-family: Montserrat, 'Helvetica Neue', Helvetica, Arial, sans-serif">Upload</button>
+      </div>
     </div>
+  </div>
 </div>

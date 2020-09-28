@@ -2,83 +2,83 @@ var avModule = angular.module('avModule', ['ngRoute', 'ngImgCrop']);
 
 var hasSeenIntro = false;
 
-avModule.config(function($routeProvider) {
+avModule.config(function ($routeProvider) {
   $routeProvider
     .when('/', {
       controller: 'LandingController',
-      templateUrl: 'partials/manage_landing.html'
+      templateUrl: 'partials/manage_landing.html',
     })
     .when('/about', {
       controller: 'AboutController',
-      templateUrl: 'partials/manage_about.html'
+      templateUrl: 'partials/manage_about.html',
     })
     .when('/concerts', {
       controller: 'ConcertsController',
-      templateUrl: 'partials/manage_concerts.html'
+      templateUrl: 'partials/manage_concerts.html',
     })
     .when('/media', {
       controller: 'MediaController',
-      templateUrl: 'partials/manage_media.html'
+      templateUrl: 'partials/manage_media.html',
     })
     .when('/repertoire', {
       controller: 'RepertoireController',
-      templateUrl: 'partials/manage_repertoire.html'
+      templateUrl: 'partials/manage_repertoire.html',
     })
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/',
     });
 });
 
 avModule
-  .factory('aboutService', function($http) {
+  .factory('aboutService', function ($http) {
     return {
-      getParagraphs: function() {
-        return $http.get('/manage/about').then(function(result) {
+      getParagraphs: function () {
+        return $http.get('/manage/about').then(function (result) {
           return result.data;
         });
-      }
+      },
     };
   })
-  .factory('concertService', function($http) {
+  .factory('concertService', function ($http) {
     return {
-      getConcerts: function() {
-        return $http.get('/manage/concerts').then(function(result) {
+      getConcerts: function () {
+        return $http.get('/manage/concerts').then(function (result) {
           return result.data;
         });
-      }
+      },
     };
   })
-  .factory('mediaPhotosService', function($http) {
+  .factory('mediaPhotosService', function ($http) {
     return {
-      getMediaPhotos: function() {
-        return $http.get('/manage/mediaPhotos').then(function(result) {
+      getMediaPhotos: function () {
+        return $http.get('/manage/mediaPhotos').then(function (result) {
           return result.data;
         });
-      }
+      },
     };
   })
-  .factory('mediaVideosService', function($http) {
+  .factory('mediaVideosService', function ($http) {
     return {
-      getMediaVideos: function() {
-        return $http.get('/manage/mediaVideos').then(function(result) {
+      getMediaVideos: function () {
+        return $http.get('/manage/mediaVideos').then(function (result) {
           return result.data;
         });
-      }
+      },
     };
   })
-  .factory('repertoireService', function($http) {
+  .factory('repertoireService', function ($http) {
     return {
-      getRepertoireItems: function() {
-        return $http.get('/manage/repertoire').then(function(result) {
+      getRepertoireItems: function () {
+        return $http.get('/manage/repertoire').then(function (result) {
           return result.data;
         });
-      }
+      },
     };
   });
 
 avModule
-  .controller('LandingController', function($scope) {
-    var init = function() {
+  .controller('LandingController', function ($scope) {
+    var init = function () {
       selectMenuItem($('[href="#/"]'));
       showTitle('hi', 500, 3500);
       showTitle('welcomeTo', 4000, 0);
@@ -86,12 +86,12 @@ avModule
       showTitle('goodLuck', 10000, 0);
     };
 
-    var showTitle = function(elementId, startAfter, hideAfter) {
-      setTimeout(function() {
+    var showTitle = function (elementId, startAfter, hideAfter) {
+      setTimeout(function () {
         $('#' + elementId).fadeIn();
       }, startAfter);
       if (hideAfter)
-        setTimeout(function() {
+        setTimeout(function () {
           $('#' + elementId).fadeOut();
         }, hideAfter);
     };
@@ -101,21 +101,21 @@ avModule
       hasSeenIntro = true;
     } else showTitle('youCanStart', 500, 0);
   })
-  .controller('AboutController', function($scope, aboutService, $route) {
+  .controller('AboutController', function ($scope, aboutService, $route) {
     init();
 
     function init() {
       selectMenuItem($('[href="#/about"]'));
-      doFunkyStuffAndThenShowPage(function() {
+      doFunkyStuffAndThenShowPage(function () {
         $scope.$apply();
-        aboutService.getParagraphs().then(function(paragraphs) {
+        aboutService.getParagraphs().then(function (paragraphs) {
           $scope.paragraphs = paragraphs;
           $scope.selectParagraph(2);
         });
       });
     }
 
-    $scope.selectParagraph = function(id) {
+    $scope.selectParagraph = function (id) {
       $('#aboutParagraphs').fadeIn();
       $('.btn-circle').removeClass('selected');
       $('#' + id).addClass('selected', 'slow');
@@ -133,7 +133,7 @@ avModule
       $('#btnOk').hide();
     };
 
-    $scope.editParagraph = function() {
+    $scope.editParagraph = function () {
       $('#paragraphContent').focus();
       $('#btnEdit').hide();
       $('#btnOk').show();
@@ -142,17 +142,13 @@ avModule
       toggleContentEditable($('#paragraphContent'));
     };
 
-    $scope.cancelEdit = function() {
+    $scope.cancelEdit = function () {
       $route.reload();
     };
 
-    $scope.saveParagraph = function() {
-      $scope.selectedParagraph.title = $('#paragraphTitle')
-        .text()
-        .trim();
-      $scope.selectedParagraph.content = $('#paragraphContent')
-        .text()
-        .trim();
+    $scope.saveParagraph = function () {
+      $scope.selectedParagraph.title = $('#paragraphTitle').text().trim();
+      $scope.selectedParagraph.content = $('#paragraphContent').text().trim();
       toggleContentEditable($('#paragraphTitle'));
       toggleContentEditable($('#paragraphContent'));
       $('#btnEdit').show();
@@ -164,42 +160,42 @@ avModule
         type: 'POST',
         contentType: 'application/json',
         data: angular.toJson($scope.selectedParagraph),
-        success: function() {
+        success: function () {
           showNotification('Edits saved');
         },
-        error: function() {
+        error: function () {
           showNotification("Paragraph couldn't be saved! :s", true);
-        }
+        },
       });
     };
   })
-  .controller('ConcertsController', function($scope, concertService, $filter) {
+  .controller('ConcertsController', function ($scope, concertService, $filter) {
     init();
 
     function init() {
       selectMenuItem($('[href="#/concerts"]'));
       $scope.editCancelled = true;
       doFunkyStuffAndThenShowPage();
-      concertService.getConcerts().then(function(concerts) {
-        $scope.upcomingConcerts = concerts.filter(function(item) {
+      concertService.getConcerts().then(function (concerts) {
+        $scope.upcomingConcerts = concerts.filter(function (item) {
           return new Date(item.date * 1000) >= new Date();
         });
-        $scope.archiveConcerts = concerts.filter(function(item) {
+        $scope.archiveConcerts = concerts.filter(function (item) {
           return new Date(item.date * 1000) < new Date();
         });
         $scope.newConcert = {
-          id: 0
+          id: 0,
         };
         $('#actualConcerts').fadeIn();
       });
     }
 
-    $scope.editConcert = function(targetId) {
+    $scope.editConcert = function (targetId) {
       var fields = $('#' + targetId + ' .field');
       fields.prop('contenteditable', true);
       fields.css({
         border: '1px solid rgba(255, 255, 255, 0.4)',
-        padding: '0 5px'
+        padding: '0 5px',
       });
       fields.eq(1).focus();
       $('#editConcert' + targetId).hide();
@@ -207,7 +203,7 @@ avModule
       $('#cancelConcertEdit' + targetId).show();
     };
 
-    $scope.cancelConcertEdit = function(targetId) {
+    $scope.cancelConcertEdit = function (targetId) {
       var fields = $('#' + targetId + ' .field');
       // fields.prop('contenteditable', false);
       fields.css('border', 'none');
@@ -217,14 +213,14 @@ avModule
       $('#saveConcert' + targetId).hide();
       $('#cancelConcertEdit' + targetId).hide();
       $scope.editCancelled = false;
-      setTimeout(function() {
+      setTimeout(function () {
         $scope.editCancelled = true;
       });
     };
 
-    $scope.saveConcert = function(targetId, archive) {
+    $scope.saveConcert = function (targetId, archive) {
       var indexOfItemToSave = $scope.upcomingConcerts
-        .map(function(e) {
+        .map(function (e) {
           return e._id;
         })
         .indexOf(targetId);
@@ -240,31 +236,31 @@ avModule
         location: $('#concertLocation' + targetId)
           .text()
           .trim(),
-        programme: $('#concertProgramme' + targetId)[0].innerHTML.trim()
+        programme: $('#concertProgramme' + targetId)[0].innerHTML.trim(),
       };
       $.ajax({
         url: 'manage/concerts/save',
         type: 'POST',
         data: angular.toJson(concert),
         contentType: 'application/json',
-        success: function(id) {
+        success: function (id) {
           $scope.upcomingConcerts[indexOfItemToSave] = concert;
           concert._id = id;
           $scope.$apply();
           $scope.cancelConcertEdit(targetId);
           showNotification('Edits saved');
         },
-        error: function() {
+        error: function () {
           showNotification("Concert couldn't be saved! :s", true);
-        }
+        },
       });
     };
 
-    $scope.addConcert = function() {
+    $scope.addConcert = function () {
       var dateObj = {
         day: $scope.newConcert.dateAsString.split('.')[0],
         month: $scope.newConcert.dateAsString.split('.')[1],
-        year: $scope.newConcert.dateAsString.split('.')[2]
+        year: $scope.newConcert.dateAsString.split('.')[2],
       };
       var formattedDate = new Date(dateObj.year + '/' + dateObj.month + '/' + dateObj.day + ' 12:00:00');
       $scope.newConcert.date = formattedDate.getTime() / 1000;
@@ -273,23 +269,23 @@ avModule
         type: 'POST',
         data: angular.toJson($scope.newConcert),
         contentType: 'application/json',
-        success: function(savedId) {
+        success: function (savedId) {
           $('#concert0').fadeOut();
           $scope.newConcert._id = savedId;
           $scope.upcomingConcerts.push($scope.newConcert);
           $scope.$apply();
           $scope.newConcert = {
-            id: 0
+            id: 0,
           };
           showNotification('Concert added!');
         },
-        error: function() {
+        error: function () {
           showNotification("Concert couldn't be saved! :s", true);
-        }
+        },
       });
     };
 
-    $scope.removeConcert = function(targetId) {
+    $scope.removeConcert = function (targetId) {
       $.confirm({
         template: 'warning',
         message: 'Remove this concert?',
@@ -298,31 +294,31 @@ avModule
         labelOk: 'Remove',
         templateOk: 'primary-small',
         templateCancel: 'primary-small',
-        onOk: function() {
+        onOk: function () {
           $.ajax({
             url: 'manage/concerts/remove',
             type: 'POST',
             data: {
-              _id: targetId
+              _id: targetId,
             },
-            success: function() {
-              $('#' + targetId).fadeOut(function() {
-                $scope.upcomingConcerts = $scope.upcomingConcerts.filter(function(concert) {
+            success: function () {
+              $('#' + targetId).fadeOut(function () {
+                $scope.upcomingConcerts = $scope.upcomingConcerts.filter(function (concert) {
                   return concert.id !== targetId;
                 });
                 $scope.$apply();
               });
               showNotification('Concert removed');
             },
-            error: function() {
+            error: function () {
               showNotification("Concert couldn't be removed! :s", true);
-            }
+            },
           });
-        }
+        },
       });
     };
 
-    $scope.countdownConcert = function(date) {
+    $scope.countdownConcert = function (date) {
       var diff = Math.floor((new Date(date * 1000) - new Date()) / 86400000);
       if (diff > 0 && diff < 20) {
         if (diff < 7) return ' (in ' + diff + ' days)';
@@ -331,15 +327,9 @@ avModule
       }
     };
 
-    $scope.getCountryByCity = function(city) {
+    $scope.getCountryByCity = function (city) {
       if (!city) return;
-      if (
-        city.indexOf('US') > -1 ||
-        city.toLowerCase().indexOf('u.s') > -1 ||
-        city.toLowerCase().indexOf('u.s.') > -1 ||
-        city.toLowerCase().indexOf('united') > -1
-      )
-        return 'us';
+      if (city.indexOf('US') > -1 || city.toLowerCase().indexOf('u.s') > -1 || city.toLowerCase().indexOf('u.s.') > -1 || city.toLowerCase().indexOf('united') > -1) return 'us';
       city = city.toLowerCase();
       if (city.indexOf('aust') > -1) return 'at';
       if (city.indexOf('port') > -1) return 'pt';
@@ -356,7 +346,7 @@ avModule
       if (city.indexOf('spa') > -1) return 'es';
     };
 
-    $scope.$watch('newConcert.city', function(newValue, oldValue) {
+    $scope.$watch('newConcert.city', function (newValue, oldValue) {
       var oldFlag = $scope.getCountryByCity(oldValue);
       var newFlag = $scope.getCountryByCity(newValue);
       if (newFlag != oldFlag) {
@@ -371,13 +361,13 @@ avModule
       }
     });
 
-    $scope.$watch('newConcert.dateAsString', function(newValue, oldValue) {
+    $scope.$watch('newConcert.dateAsString', function (newValue, oldValue) {
       if (!$scope.newConcert) return;
       $('#iconDateLowerThanToday').hide();
       var dateObj = {
         day: $scope.newConcert.dateAsString.split('.')[0],
         month: $scope.newConcert.dateAsString.split('.')[1],
-        year: $scope.newConcert.dateAsString.split('.')[2]
+        year: $scope.newConcert.dateAsString.split('.')[2],
       };
       var formattedDate = new Date(dateObj.year + '/' + dateObj.month + '/' + dateObj.day + ' 12:00:00');
       if (formattedDate < new Date() || isNaN(formattedDate.getTime())) {
@@ -385,14 +375,14 @@ avModule
       }
     });
   })
-  .controller('MediaController', function($scope, mediaPhotosService, mediaVideosService) {
+  .controller('MediaController', function ($scope, mediaPhotosService, mediaVideosService) {
     init();
 
     function init() {
       selectMenuItem($('[href="#/media"]'));
       $('#newPhoto').hide();
-      doFunkyStuffAndThenShowPage(function() {
-        $('#newImage').change(function() {
+      doFunkyStuffAndThenShowPage(function () {
+        $('#newImage').change(function () {
           $('#iconSaveWithLoading').removeClass();
           $('#iconSaveWithLoading').addClass('fa fa-spinner fa-spin gold');
           var data = new FormData();
@@ -403,43 +393,43 @@ avModule
             data: data,
             contentType: false,
             processData: false,
-            success: function(newPhotoUrl) {
+            success: function (newPhotoUrl) {
               $('#iconSaveWithLoading').removeClass();
               $('#iconSaveWithLoading').addClass('fa fa-upload');
               $scope.mediaPhotos.push({
                 url: newPhotoUrl,
                 active: true,
                 alt: 'Aurelia Visovan Carousel Image',
-                title: 'Aurelia Visovan'
+                title: 'Aurelia Visovan',
               });
               $scope.$apply();
               $('#newPhoto').fadeOut();
               showNotification('Image added');
             },
-            error: function() {
+            error: function () {
               $('#iconSaveWithLoading').removeClass();
               $('#iconSaveWithLoading').addClass('glyphicon glyphicon-ok');
               showNotification("Image couldn't be added! :s", true);
-            }
+            },
           });
         });
       });
-      mediaPhotosService.getMediaPhotos().then(function(mediaPhotos) {
+      mediaPhotosService.getMediaPhotos().then(function (mediaPhotos) {
         $scope.mediaPhotos = mediaPhotos;
         $('#divMediaPhotos').fadeIn();
       });
-      mediaVideosService.getMediaVideos().then(function(mediaVideos) {
+      mediaVideosService.getMediaVideos().then(function (mediaVideos) {
         $scope.mediaVideos = mediaVideos;
         $('#divMediaVideos').fadeIn();
       });
       $scope.myImage = '';
       $scope.myCroppedImage = '';
 
-      var handleFileSelect = function(evt) {
+      var handleFileSelect = function (evt) {
         var file = evt.currentTarget.files[0];
         var reader = new FileReader();
-        reader.onload = function(evt) {
-          $scope.$apply(function($scope) {
+        reader.onload = function (evt) {
+          $scope.$apply(function ($scope) {
             $scope.myImage = evt.target.result;
           });
         };
@@ -448,18 +438,18 @@ avModule
       angular.element(document.querySelector('#inputVideoImage')).on('change', handleFileSelect);
 
       $scope.newVideo = {
-        title: 'Rick Astley - Never Gonna Give You Up',
+        title: '',
         year: new Date().getFullYear(),
         ratio: '16by9',
-        url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'
+        url: '',
       };
     }
 
     $scope.$watch(
       'newVideo',
-      function(newValue, oldValue) {
+      function (newValue, oldValue) {
         var id = getVideoId(newValue.url);
-        if (!newValue.title || !newValue.imageUrl || !id) $('#btnSaveNewVideo').addClass('disabled');
+        if (!newValue.title || !id) $('#btnSaveNewVideo').addClass('disabled');
         else $('#btnSaveNewVideo').removeClass('disabled');
         if (id) $scope.newVideo.url = 'http://youtube.com/embed/' + id;
         else $scope.newVideo.url = '';
@@ -473,7 +463,7 @@ avModule
       return match && match[7].length == 11 ? match[7] : false;
     }
 
-    $scope.removePhoto = function(id, url) {
+    $scope.removePhoto = function (id, url) {
       var icon = $('#iconRemoveWithLoading');
       icon.removeClass();
       icon.addClass('fa fa-spinner fa-spin gold');
@@ -482,10 +472,10 @@ avModule
         type: 'POST',
         data: {
           _id: id,
-          url: url
+          url: url,
         },
-        success: function() {
-          $scope.mediaPhotos = $scope.mediaPhotos.filter(function(item) {
+        success: function () {
+          $scope.mediaPhotos = $scope.mediaPhotos.filter(function (item) {
             return item._id !== id;
           });
           $scope.$apply();
@@ -493,76 +483,72 @@ avModule
           icon.addClass('fa fa-remove');
           showNotification('Photo removed');
         },
-        error: function() {
+        error: function () {
           icon.removeClass();
           icon.addClass('fa fa-remove');
           showNotification("Photo couldn't be removed! :s", true);
-        }
+        },
       });
     };
 
-    $scope.uploadVideoImage = function() {
+    $scope.uploadVideoImage = function () {
       $.ajax({
         url: 'manage/mediaVideos/upload',
         type: 'POST',
         data: angular.toJson({
-          image: $scope.myCroppedImage
+          image: $scope.myCroppedImage,
         }),
         contentType: 'application/json',
-        success: function(thumbnailUrl) {
+        success: function (thumbnailUrl) {
           showNotification('Video thumbnail added');
           $scope.newVideo.imageUrl = thumbnailUrl;
           $scope.$apply();
           $('#modalAddImage').modal('hide');
         },
-        error: function() {
+        error: function () {
           showNotification("Video thumbnail couldn't be added! :s", true);
-        }
+        },
       });
     };
 
-    $scope.showNewVideo = function() {
-      ($scope.newVideo.title = 'Rick Astley - Never Gonna Give You Up'),
-        ($scope.newVideo.year = new Date().getFullYear()),
-        ($scope.newVideo.ratio = '16by9'),
-        ($scope.newVideo.url = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ'),
-        ($scope.newVideo.imageUrl = '');
+    $scope.showNewVideo = function () {
+      ($scope.newVideo.title = ''), ($scope.newVideo.year = new Date().getFullYear()), ($scope.newVideo.ratio = '16by9'), ($scope.newVideo.url = ''), ($scope.newVideo.imageUrl = '');
       $('#divNewVideo').fadeIn();
     };
 
-    $scope.cancelNewVideo = function() {
+    $scope.cancelNewVideo = function () {
       $.ajax({
         url: 'manage/mediaVideos/removeVideoImage',
         type: 'POST',
         data: angular.toJson({
-          url: $scope.newVideo.imageUrl
+          url: $scope.newVideo.imageUrl,
         }),
-        contentType: 'application/json'
+        contentType: 'application/json',
       });
       $('#divNewVideo').fadeOut();
     };
 
-    $scope.saveNewVideo = function() {
+    $scope.saveNewVideo = function () {
       $.ajax({
         url: 'manage/mediaVideos/save',
         type: 'POST',
         data: angular.toJson($scope.newVideo),
         contentType: 'application/json',
-        success: function(newId) {
+        success: function (newId) {
           showNotification('New video added');
           $scope.newVideo._id = newId;
           $scope.mediaVideos.push($scope.newVideo);
           $scope.$apply();
           $('#divNewVideo').hide();
         },
-        error: function() {
+        error: function () {
           showNotification("New video couldn't be added! :s", true);
           $('#divNewVideo').hide();
-        }
+        },
       });
     };
 
-    $scope.removeVideo = function(id, imageUrl) {
+    $scope.removeVideo = function (id, imageUrl) {
       $.confirm({
         template: 'warning',
         message: 'Remove this video?',
@@ -571,87 +557,87 @@ avModule
         labelOk: 'Remove',
         templateOk: 'primary-small',
         templateCancel: 'primary-small',
-        onOk: function() {
+        onOk: function () {
           $.ajax({
             url: 'manage/mediaVideos/remove',
             type: 'POST',
             data: {
               _id: id,
-              imageUrl: imageUrl
+              imageUrl: imageUrl,
             },
-            success: function() {
-              $scope.mediaVideos = $scope.mediaVideos.filter(function(item) {
+            success: function () {
+              $scope.mediaVideos = $scope.mediaVideos.filter(function (item) {
                 return item._id !== id;
               });
               $scope.$apply();
               showNotification('Video removed');
             },
-            error: function() {
+            error: function () {
               showNotification("Video couldn't be removed! :s", true);
-            }
+            },
           });
-        }
+        },
       });
     };
   })
-  .controller('RepertoireController', function($scope, repertoireService) {
+  .controller('RepertoireController', function ($scope, repertoireService) {
     init();
 
     function init() {
       selectMenuItem($('[href="#/repertoire"]'));
-      repertoireService.getRepertoireItems().then(function(categories) {
+      repertoireService.getRepertoireItems().then(function (categories) {
         $scope.repertoireItems = categories;
-        $scope.selectedCategory = $scope.repertoireItems.filter(function(item) {
+        $scope.selectedCategory = $scope.repertoireItems.filter(function (item) {
           return item.type == 2;
         });
       });
       $scope.selectedCategoryIndex = 2;
-      doFunkyStuffAndThenShowPage(function() {
+      doFunkyStuffAndThenShowPage(function () {
         $scope.selectCategory(2);
-        setTimeout(function() {
+        setTimeout(function () {
           $('.repertoire-composer-title')
             .not('#newComposerTitle')
-            .click(function() {
+            .click(function () {
               $('span:first', this).toggleClass('fa-chevron-down');
-              setTimeout(function() {
+              setTimeout(function () {
                 $('.new-composition').select();
               }, 200);
             });
         }, 700);
-        setTimeout(function() {
-          $('.new-composition').keyup(function(e) {
+        setTimeout(function () {
+          $('.new-composition').keyup(function (e) {
             if (e.keyCode == 13) {
               login();
             }
           });
         }, 700);
-        $('.like-input').click(function() {
+        $('.like-input').click(function () {
           return false;
         });
       });
     }
 
-    $scope.selectCategory = function(id) {
+    $scope.selectCategory = function (id) {
       $('.btn-rectangle').removeClass('selected');
       $('#category' + id).addClass('selected', 'slow');
       $scope.selectedCategoryIndex = id;
     };
 
-    $scope.addComposition = function(composerId) {
+    $scope.addComposition = function (composerId) {
       $('#iconSaveWithLoading').removeClass();
       $('#iconSaveWithLoading').addClass('fa fa-spinner fa-spin gold');
 
       if ($scope.repertoireItems) {
-        var selectedCategory = $scope.repertoireItems.filter(function(item) {
+        var selectedCategory = $scope.repertoireItems.filter(function (item) {
           return item.type == $scope.selectedCategoryIndex;
         });
       }
       var newComposition = $('#newComposition' + (composerId || '')).val();
-      var composerToAddTo = $scope.repertoireItems.filter(function(item) {
+      var composerToAddTo = $scope.repertoireItems.filter(function (item) {
         return item._id == composerId;
       })[0];
       var itemExists = composerToAddTo.compositions
-        .map(function(composition) {
+        .map(function (composition) {
           return composition;
         })
         .indexOf(newComposition);
@@ -671,43 +657,43 @@ avModule
         type: 'POST',
         data: angular.toJson(toSend),
         contentType: 'application/json',
-        success: function() {
+        success: function () {
           composerToAddTo.compositions.push(newComposition);
           $scope.$apply();
           $('#iconSaveWithLoading').removeClass();
           $('#iconSaveWithLoading').addClass('glyphicon glyphicon-ok');
           showNotification('Repertoire item added');
         },
-        error: function() {
+        error: function () {
           showNotification("Repertoire item couldn't be added! :s", true);
-        }
+        },
       });
     };
 
-    $scope.enableCompositionNameEdit = function(composerId, compositionId) {
+    $scope.enableCompositionNameEdit = function (composerId, compositionId) {
       $('#btnEditCompositionName' + composerId + '7a6' + compositionId).hide();
       $('#btnSaveCompositionName' + composerId + '7a6' + compositionId).show();
 
       var $inputComposition = $('#compositionName' + composerId + '7a6' + compositionId);
       toggleContentEditable($inputComposition);
       $($inputComposition).focus();
-      $($inputComposition).keydown(function(e) {
+      $($inputComposition).keydown(function (e) {
         if (e.keyCode == 13 && !e.shiftKey) {
           e.preventDefault();
         }
       });
-      $($inputComposition).keyup(function(e) {
+      $($inputComposition).keyup(function (e) {
         if (e.keyCode == 13 && !e.shiftKey) {
           $scope.saveCompositionNameEdit(composerId, compositionId);
         }
       });
     };
 
-    $scope.saveCompositionNameEdit = function(composerId, compositionId) {
+    $scope.saveCompositionNameEdit = function (composerId, compositionId) {
       var newCompositionName = $('#compositionName' + composerId + '7a6' + compositionId)
         .text()
         .trim();
-      var composerToEditFrom = $scope.repertoireItems.filter(function(item) {
+      var composerToEditFrom = $scope.repertoireItems.filter(function (item) {
         return item._id == composerId;
       })[0];
       var composerToEditFromToSend = angular.copy(composerToEditFrom);
@@ -717,7 +703,7 @@ avModule
         type: 'POST',
         data: angular.toJson(composerToEditFromToSend),
         contentType: 'application/json',
-        success: function() {
+        success: function () {
           $('#btnEditCompositionName' + composerId + '7a6' + compositionId).show();
           $('#btnSaveCompositionName' + composerId + '7a6' + compositionId).hide();
           toggleContentEditable($('#compositionName' + composerId + '7a6' + compositionId));
@@ -725,14 +711,14 @@ avModule
           $scope.$apply();
           showNotification('Repertoire item updated');
         },
-        error: function() {
+        error: function () {
           showNotification("Repertoire item couldn't be updated! :s", true);
-        }
+        },
       });
     };
 
-    $scope.removeComposition = function(composerId, compositionId) {
-      var composerToRemoveFrom = $scope.repertoireItems.filter(function(item) {
+    $scope.removeComposition = function (composerId, compositionId) {
+      var composerToRemoveFrom = $scope.repertoireItems.filter(function (item) {
         return item._id == composerId;
       })[0];
       var composerToRemoveFromToSend = angular.copy(composerToRemoveFrom);
@@ -742,31 +728,29 @@ avModule
         type: 'POST',
         data: angular.toJson(composerToRemoveFromToSend),
         contentType: 'application/json',
-        success: function() {
+        success: function () {
           composerToRemoveFrom.compositions.splice(compositionId, 1);
           $scope.$apply();
           showNotification('Repertoire item removed');
         },
-        error: function() {
+        error: function () {
           showNotification("Repertoire item couldn't be removed! :s", true);
-        }
+        },
       });
     };
 
-    $scope.addComposer = function() {
+    $scope.addComposer = function () {
       var newComposer = {
         type: $scope.selectedCategoryIndex,
-        composer: $('#newComposerName')
-          .text()
-          .trim(),
-        compositions: []
+        composer: $('#newComposerName').text().trim(),
+        compositions: [],
       };
 
       $scope.repertoireItems.unshift(newComposer);
       $('#newComposerDiv').fadeOut();
     };
 
-    $scope.enableComposerNameEdit = function(composerId, $event) {
+    $scope.enableComposerNameEdit = function (composerId, $event) {
       if ($event.stopPropagation) $event.stopPropagation();
       $event.cancelBubble = true;
       $event.returnValue = false;
@@ -776,24 +760,24 @@ avModule
 
       toggleContentEditable($('#composerName' + composerId));
       $('#composerName' + composerId).focus();
-      $('#composerName' + composerId).keydown(function(e) {
+      $('#composerName' + composerId).keydown(function (e) {
         if (e.keyCode == 13 && !e.shiftKey) {
           e.preventDefault();
         }
       });
-      $('#composerName' + composerId).keyup(function(e) {
+      $('#composerName' + composerId).keyup(function (e) {
         if (e.keyCode == 13 && !e.shiftKey) {
           $scope.saveComposerNameEdit(composerId, $event);
         }
       });
     };
 
-    $scope.saveComposerNameEdit = function(composerId, $event) {
+    $scope.saveComposerNameEdit = function (composerId, $event) {
       if ($event.stopPropagation) $event.stopPropagation();
       $event.cancelBubble = true;
       $event.returnValue = false;
 
-      var composerToEdit = $scope.repertoireItems.filter(function(item) {
+      var composerToEdit = $scope.repertoireItems.filter(function (item) {
         return item._id == composerId;
       })[0];
       composerToEdit.composer = $('#composerName' + composerId)
@@ -804,19 +788,19 @@ avModule
         type: 'POST',
         data: angular.toJson(composerToEdit),
         contentType: 'application/json',
-        success: function() {
+        success: function () {
           toggleContentEditable($('#composerName' + composerId));
           $('#btnEditComposerName' + composerId).show();
           $('#btnSaveComposerName' + composerId).hide();
           showNotification('Composer name changed');
         },
-        error: function() {
+        error: function () {
           showNotification("Composer name couldn't be changed! :s", true);
-        }
+        },
       });
     };
 
-    $scope.removeComposer = function(id, $event) {
+    $scope.removeComposer = function (id, $event) {
       if ($event.stopPropagation) $event.stopPropagation();
       $event.cancelBubble = true;
       $event.returnValue = false;
@@ -829,7 +813,7 @@ avModule
         labelOk: 'Remove',
         templateOk: 'primary-small',
         templateCancel: 'primary-small',
-        onOk: function() {
+        onOk: function () {
           var icon = $('#spanRemoveComposer');
           icon.removeClass();
           icon.addClass('fa fa-spinner fa-spin gold');
@@ -837,11 +821,11 @@ avModule
             url: 'manage/repertoire/removeComposer',
             type: 'POST',
             data: angular.toJson({
-              _id: id
+              _id: id,
             }),
             contentType: 'application/json',
-            success: function() {
-              $scope.repertoireItems = $scope.repertoireItems.filter(function(item) {
+            success: function () {
+              $scope.repertoireItems = $scope.repertoireItems.filter(function (item) {
                 return item._id !== id;
               });
               $scope.$apply();
@@ -849,37 +833,37 @@ avModule
               icon.addClass('fa fa-remove');
               showNotification('Composer removed');
             },
-            error: function() {
+            error: function () {
               icon.removeClass();
               icon.addClass('fa fa-remove');
               showNotification("Composer couldn't be removed! :s", true);
-            }
+            },
           });
-        }
+        },
       });
     };
   });
 
 avModule.filter('sanitize', [
   '$sce',
-  function($sce) {
-    return function(htmlCode) {
+  function ($sce) {
+    return function (htmlCode) {
       return $sce.trustAsHtml(htmlCode);
     };
-  }
+  },
 ]);
 
 avModule.filter('trusted', [
   '$sce',
-  function($sce) {
-    return function(url) {
+  function ($sce) {
+    return function (url) {
       return $sce.trustAsResourceUrl(url);
     };
-  }
+  },
 ]);
 
-avModule.filter('concertsFilter', function() {
-  return function(concerts, from) {
+avModule.filter('concertsFilter', function () {
+  return function (concerts, from) {
     var df = parseDate(from);
     var dt = parseDate(to);
     var result = [];
@@ -898,13 +882,13 @@ function showNotification(notificationText, error) {
   if (!error) {
     $('#notificationTextSuccess').html(notificationText);
     $('#changesSaveSuccess').fadeIn();
-    setTimeout(function() {
+    setTimeout(function () {
       $('#changesSaveSuccess').fadeOut();
     }, 2000);
   } else {
     $('#notificationTextError').html(notificationText);
     $('#changesSaveError').fadeIn();
-    setTimeout(function() {
+    setTimeout(function () {
       $('#changesSaveError').fadeOut();
     }, 2000);
   }
@@ -944,16 +928,16 @@ function doFunkyStuffAndThenShowPage(stuffToDoAfter) {
   $('.line-underline').css('right', '1500px');
   $('.line-underline').animate(
     {
-      right: -1500
+      right: -1500,
     },
     1000,
-    function() {
+    function () {
       $('.section-editor').show('fast');
       $('.intro-text').hide();
     }
   );
   if (stuffToDoAfter)
-    setTimeout(function() {
+    setTimeout(function () {
       stuffToDoAfter();
     }, 1000);
 }

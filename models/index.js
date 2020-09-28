@@ -24,6 +24,7 @@ exports.MediaPhoto = mongoose.model(
   'mediaPhoto',
   new Schema({
     url: String,
+    key: String,
     active: Boolean,
     alt: String,
     title: String,
