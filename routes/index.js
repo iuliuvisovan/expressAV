@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var dateformat = require('dateformat');
 var mongoose = require('mongoose');
-var models = require('../models/models.js');
+var models = require('../models/index.js');
 
 /* GET home page. */
 router.get('/', function (request, response) {
