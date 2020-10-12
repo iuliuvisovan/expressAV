@@ -8,7 +8,7 @@ AWS.config.update({ accessKeyId: process.env.AWS_ACCESS_KEY, secretAccessKey: pr
 
 var fs = require('fs-extra');
 var mongoose = require('mongoose');
-var { MediaVideo, MediaPhoto, RepertoireItem, Concert } = require('../models');
+var { MediaVideo, MediaPhoto, RepertoireItem, Concert, AboutSection } = require('../models');
 
 /* GET manage edit page. */
 router.get('/', function (request, response) {
