@@ -344,6 +344,7 @@ avModule
       if (city.indexOf('holl') > -1) return 'nl';
       if (city.indexOf('gree') > -1) return 'gr';
       if (city.indexOf('spa') > -1) return 'es';
+      if (city.indexOf('slova') > -1) return 'sk';
     };
 
     $scope.$watch('newConcert.city', function (newValue, oldValue) {
