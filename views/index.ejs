@@ -56,10 +56,7 @@
               <a href="#page-top"></a>
             </li>
             <li onclick="$(this).addClass('clicked')">
-              <a class="page-scroll" href="#about" title="Learn more about Aurelia">
-                About
-                <div class="bullet" style="position: absolute; width: 9px; height: 9px; color: gold; top: 15px; left: 69px; z-index: 10; background-color: gold; border-radius: 100%"></div>
-              </a>
+              <a class="page-scroll" href="#about" title="Learn more about Aurelia"> About </a>
             </li>
             <li>
               <a class="page-scroll" href="#concerts" title="See the list of past and future concerts">Concerts</a>
@@ -84,14 +81,15 @@
     <header>
       <div class="container">
         <div class="intro-text">
-          <h1 style="margin-top: 100px">Aurelia Visovan</h1>
+          <h1 class="main-title">Aurelia Visovan</h1>
           <a href="#about" style="margin-bottom: 100px" class="page-scroll btn btn-xl" title="Learn more about Aurelia">Enter</a>
           <center>
             <div class="news" style="display: none">
               <h3>News:</h3>
               <div class="date"><span class="glyphicon glyphicon-star-empty"></span><br /><span class="hidden-xs">30.01.2015</span></div>
               <h4>
-                The trio Aurelia Visovan(piano), Vera Karner(clarinet) and Dominik Wagner(double bass) won the "Fanny Mendelssohn Förderpreis" in Hamburg and will<br class="visible-xs" />
+                The trio Aurelia Visovan(piano), Vera Karner(clarinet) and Dominik Wagner(double bass) won the "Fanny Mendelssohn
+                Förderpreis" in Hamburg and will<br class="visible-xs" />
                 record their debut CD for Berlin Classics
               </h4>
             </div>
@@ -116,29 +114,41 @@
                 <%- [0,1,2].map(x => data.aboutSections[x].content).join('') .replace(/\*\*\*/g, '<br />' + '&nbsp;'.repeat(10)) %>
               </p>
             </div>
-            <div class="col-md-3" style="overflow: hidden; padding-right: 51px; border-radius: 8px; margin-top: 40px">
-              <img src="/img/about/about-image.jpg" alt="Aurelia 2018" style="height: 100%; width: 242%; margin-left: -67%" />
+            <div class="col-md-3" style="margin-top: 40px">
+              <img src="/img/about/about-image.jpg" alt="Aurelia 2018" style="width: 100%; border-radius: 8px" />
             </div>
           </div>
 
-          <div style="margin-top: 40px; margin-bottom: -40px">
-            <div style="font-size: 19px">
+          <div class="col-md-12 biography-download">
+            <div class="row" style="font-size: 19px">
               Download official biography:
-              <a target="_blank" href="https://docs.google.com/document/d/1ksOI1dt21BBhEylxfLv9RsjN6K0L2RDArAZr3BknOVQ/edit" style="margin-left: 5px"
-                ><span class="flag-icon flag-icon-gb" title="English"></span> EN</a
-              >
-              |
-              <a target="_blank" href="https://docs.google.com/document/d/1tRLhDrkplgyGMmw0SqeUKujfyDHVR4MgeyBRaYdvqWs/edit"><span class="flag-icon flag-icon-de" title="German"></span> DE</a>
+              <div style="display: inline-block">
+                <a
+                  target="_blank"
+                  href="https://docs.google.com/document/d/1ksOI1dt21BBhEylxfLv9RsjN6K0L2RDArAZr3BknOVQ/edit"
+                  style="margin-left: 5px"
+                  ><span class="flag-icon flag-icon-gb" title="English"></span> EN</a
+                >
+                |
+                <a target="_blank" href="https://docs.google.com/document/d/1tRLhDrkplgyGMmw0SqeUKujfyDHVR4MgeyBRaYdvqWs/edit"
+                  ><span class="flag-icon flag-icon-de" title="German"></span> DE</a
+                >
+              </div>
             </div>
-            <div style="font-size: 16px">
+            <div class="row" style="font-size: 16px">
               Short version:
-              <a target="_blank" href="https://docs.google.com/document/d/1c3BDyF20dFfyRUtFOqtG4oxxbxL-cfPfFSlnJK-4Gww/edit" style="margin-left: 5px"
+              <a
+                target="_blank"
+                href="https://docs.google.com/document/d/1c3BDyF20dFfyRUtFOqtG4oxxbxL-cfPfFSlnJK-4Gww/edit"
+                style="margin-left: 5px"
                 ><span class="flag-icon flag-icon-gb" title="English"></span> EN</a
               >
               |
-              <a target="_blank" href="https://docs.google.com/document/d/1gXWiZEWkfy_9QIsQxM2BAf5tdlwTEfkiMItU-GCzMCI/edit"><span class="flag-icon flag-icon-de" title="German"></span> DE</a>
+              <a target="_blank" href="https://docs.google.com/document/d/1gXWiZEWkfy_9QIsQxM2BAf5tdlwTEfkiMItU-GCzMCI/edit"
+                ><span class="flag-icon flag-icon-de" title="German"></span> DE</a
+              >
             </div>
-            <div style="margin-top: 10px">
+            <div class="row">
               <i> Disclaimer: The provided biographies must be used in their complete form and unmodified.</i>
             </div>
           </div>
@@ -168,12 +178,17 @@
               </thead>
               <div class="panel-heading">Upcoming (click on a concert to see the programme)</div>
               <tbody>
-                <% data.concerts .filter(function (item) { return item.date * 1000 >= (+new Date() - 86400000); }).sort(function (a, b) { return a.date - b.date }).forEach(function(item) { %>
+                <% data.concerts .filter(function (item) { return item.date * 1000 >= (+new Date() - 86400000); }).sort(function (a, b) {
+                return a.date - b.date }).forEach(function(item) { %>
                 <tr class="clickable" data-toggle="collapse" data-target="#concertinfo<%= item.date %>">
                   <th scope="row"><%= item.name %></th>
                   <td><%= dateformat(new Date(item.date * 1000), "dd.mm.yyyy") %></td>
-                  <td style="white-space: nowrap;">
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="margin-top: -4px; margin-right: 4px;" class="flag flag-<%= item.flag %>" />
+                  <td style="white-space: nowrap">
+                    <img
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="margin-top: -4px; margin-right: 4px"
+                      class="flag flag-<%= item.flag %>"
+                    />
                     <%= item.city %>
                   </td>
                   <td><%= item.location %></td>
@@ -197,12 +212,17 @@
                 </tr>
               </thead>
               <tbody>
-                <% data.concerts .filter(function (item) { return item.date * 1000 < (+new Date() - 86400000); }).sort(function (a, b) { return b.date - a.date }).forEach(function(item) { %>
+                <% data.concerts .filter(function (item) { return item.date * 1000 < (+new Date() - 86400000); }).sort(function (a, b) {
+                return b.date - a.date }).forEach(function(item) { %>
                 <tr>
                   <td><%= item.name %></td>
                   <td><%= dateformat(new Date(item.date * 1000), "dd.mm.yyyy") %></td>
                   <td>
-                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="margin-top: -4px" class="flag flag-<%= item.flag %>" />
+                    <img
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="margin-top: -4px"
+                      class="flag flag-<%= item.flag %>"
+                    />
                     <%= item.city %>
                   </td>
                   <td><%= item.location %></td>
@@ -235,7 +255,13 @@
             <div class="carousel-inner">
               <% data.mediaPhotos.forEach(function(item, i) { %>
               <div class="item <%= i == 0 ? 'active' : '' %>">
-                <img src="<%= item.url %>" alt="<%= item.alt %>" title="<%= item.title %>" class="img-responsive" style="max-height: 780px; margin: auto" />
+                <img
+                  src="<%= item.url %>"
+                  alt="<%= item.alt %>"
+                  title="<%= item.title %>"
+                  class="img-responsive"
+                  style="max-height: 780px; margin: auto"
+                />
               </div>
               <% }) %>
             </div>
@@ -306,22 +332,51 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <a style="display: block" href="http://www.iuliu.net" target="_blank" class="rigid-link" title="Website built and mantained by www.iuliu.net">
-              <span class="copyright">Copyright &copy; Iuliu Vișovan 2015-2020</span>
+            <a
+              style="display: block"
+              href="http://www.iuliu.net"
+              target="_blank"
+              class="rigid-link"
+              title="Website built and mantained by www.iuliu.net"
+            >
+              <span class="copyright">Copyright &copy; Iuliu Vișovan 2015-2022</span>
             </a>
             <span title="Photographs credits goes to Felix Abrudan & Sanziana Craciun" class="copyright">
               Photo credits: &copy;
               <a class="rigid-link" href="http://felixabrudan.eu">Felix Abrudan</a>,
-              <a class="rigid-link" href="http://andresanazco.com/">Andrés Añazco</a>
+              <a class="rigid-link" href="http://andresanazco.com/">Andrés Añazco</a>,
+              <a
+                class="rigid-link"
+                href="https://instagram.com/sofijapalurovic_photo?igshid=YzAyZWRlMzg=
+              "
+                >Sofija Palurović </a
+              >,
+              <a
+                class="rigid-link"
+                href="https://instagram.com/poptelecanionut?igshid=YzAyZWRlMzg=
+              "
+                >Ionut Poptelecan
+              </a>
             </span>
           </div>
           <div class="col-md-4">
-            <div class="fb-like" data-href="https://www.facebook.com/AureliaVisovanOfficial" data-layout="standard" data-action="like" data-show-faces="true" data-share="false"></div>
+            <div
+              class="fb-like"
+              data-href="https://www.facebook.com/AureliaVisovanOfficial"
+              data-layout="standard"
+              data-action="like"
+              data-show-faces="true"
+              data-share="false"
+            ></div>
           </div>
           <div class="col-md-4">
             <ul class="list-inline quicklinks">
               <li><a href="#"></a></li>
-              <li><a href="http://www.aureliavisovan.com" target="_blank" class="rigid-link" title="www.aureliavisovan.com">www.aureliavisovan.com</a></li>
+              <li>
+                <a href="http://www.aureliavisovan.com" target="_blank" class="rigid-link" title="www.aureliavisovan.com"
+                  >www.aureliavisovan.com</a
+                >
+              </li>
             </ul>
           </div>
         </div>
