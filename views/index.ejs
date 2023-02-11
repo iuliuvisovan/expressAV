@@ -15,7 +15,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/styles.css?v=3" rel="stylesheet" />
     <link href="css/flags.css" rel="stylesheet" />
 
     <!-- Custom Fonts -->
@@ -35,6 +35,15 @@
   </head>
 
   <body id="page-top" class="index">
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v16.0&appId=306856700168414&autoLogAppEvents=1"
+      nonce="6bdRT41m"
+    ></script>
+
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top" style="width: 100vw">
       <div class="container">
@@ -98,16 +107,39 @@
       </div>
     </header>
 
+    <!-- News Section -->
+    <section id="news">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading" style="color: #303e45">Latest News</h2>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-12">
+            <div
+              class="fb-post"
+              data-href="https://www.facebook.com/aurelia.visovan/posts/pfbid0awiidLME4HLYGMREDF3csR9obwgNWLJmB9ArDCNCrjmPLh6vD2gkL1odu5iPWEuUl"
+              data-show-text="true"
+              data-width="750"
+              style="margin-top: 24px"
+            >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- About Section -->
     <section id="about">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading">About</h2>
-            <h3 class="section-subheading text-muted">Aurelia Vișovan's biography</h3>
+            <h3 class="section-subheading text-muted" style="margin-bottom: 0">Aurelia Vișovan's biography</h3>
           </div>
         </div>
-        <div class="row text-center" style="margin-top: -50px">
+        <div class="row text-center">
           <div class="col-md-12">
             <div class="col-md-9">
               <p class="text-muted" style="text-align: justify; padding-right: 7px">

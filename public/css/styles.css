@@ -187,6 +187,7 @@ h1 {
 }
 
 #about {
+  padding-top: 35px;
   margin-bottom: 150px;
 }
 
@@ -423,10 +424,6 @@ header {
 @media (max-width: 568px) {
   header {
     background-position: top -70px left 0;
-  }
-
-  #about {
-    padding-top: 40px;
   }
 
   .main-title {
@@ -1001,4 +998,15 @@ img::-moz-selection {
 .biography-download .row {
   margin-top: 32px;
   padding: 0 16px;
+}
+
+#news {
+  padding-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  #news {
+    padding-top: 0;
+    margin-top: -38px;
+  }
 }
