@@ -64,6 +64,8 @@ var getCountryByCity = (city) => {
   if (city.indexOf('slova') > -1) return 'sk';
   if (city.indexOf('switz') > -1) return 'ch';
   if (city.indexOf('malt') > -1) return 'mt';
+  if (city.indexOf('south ko') > -1) return 'kr';
+  if (city.indexOf('hungary') > -1) return 'hu';
 };
 
 module.exports = router;
