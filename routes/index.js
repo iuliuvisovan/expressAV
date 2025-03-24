@@ -46,7 +46,13 @@ router.get('/', function (request, response) {
 
 var getCountryByCity = (city) => {
   if (!city) return;
-  if (city.indexOf('US') > -1 || city.toLowerCase().indexOf('u.s') > -1 || city.toLowerCase().indexOf('u.s.') > -1 || city.toLowerCase().indexOf('united') > -1) return 'us';
+  if (
+    city.indexOf('US') > -1 ||
+    city.toLowerCase().indexOf('u.s') > -1 ||
+    city.toLowerCase().indexOf('u.s.') > -1 ||
+    city.toLowerCase().indexOf('united') > -1
+  )
+    return 'us';
   city = city.toLowerCase();
   if (city.indexOf('aust') > -1) return 'at';
   if (city.indexOf('port') > -1) return 'pt';
@@ -65,7 +71,26 @@ var getCountryByCity = (city) => {
   if (city.indexOf('switz') > -1) return 'ch';
   if (city.indexOf('malt') > -1) return 'mt';
   if (city.indexOf('south ko') > -1) return 'kr';
-  if (city.indexOf('hungary') > -1) return 'hu';
+  if (city.indexOf('hungar') > -1) return 'hu';
+  if (city.indexOf('poland') > -1) return 'pl';
+
+  if (city.indexOf('canada') > -1) return 'ca';
+  if (city.indexOf('swed') > -1) return 'se';
+  if (city.indexOf('norw') > -1) return 'no';
+  if (city.indexOf('denm') > -1) return 'dk';
+  if (city.indexOf('finla') > -1) return 'fi';
+  if (city.indexOf('russ') > -1) return 'ru';
+  if (city.indexOf('ukra') > -1) return 'ua';
+  if (city.indexOf('bulg') > -1) return 'bg';
+  if (city.indexOf('croa') > -1) return 'hr';
+  if (city.indexOf('czech') > -1) return 'cz';
+  if (city.indexOf('serb') > -1) return 'rs';
+  if (city.indexOf('esto') > -1) return 'ee';
+  if (city.indexOf('latv') > -1) return 'lv';
+  if (city.indexOf('lith') > -1) return 'lt';
+  if (city.indexOf('irela') > -1) return 'ie';
+  if (city.indexOf('chin') > -1) return 'cn';
+  if (city.indexOf('braz') > -1) return 'br';
 };
 
 module.exports = router;
