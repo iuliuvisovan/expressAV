@@ -197,60 +197,47 @@ router.post('/repertoire/removeComposer', function (request, response) {
   removeById('repertoireItem', request.body._id, response);
 });
 
-function sendModel(modelName, response) {
-  mongoose.model(modelName).find({}, function (err, docs) {
-    if (!err) {
-      if (modelName == 'repertoireItem') {
-        var sortedDocs = docs.sort(function (a, b) {
-          var textA = a.composer.toUpperCase().split(' ').splice(-1);
-          var textB = b.composer.toUpperCase().split(' ').splice(-1);
-          return textA < textB ? -1 : textA > textB ? 1 : 0;
-        });
-        response.send(sortedDocs);
-      } else response.send(docs);
-    } else response.status(500).send(err);
-  });
+async function sendModel(modelName, response) {
+  try {
+    const docs = await mongoose.model(modelName).find({});
+    if (modelName == 'repertoireItem') {
+      var sortedDocs = docs.sort(function (a, b) {
+        var textA = a.composer.toUpperCase().split(' ').splice(-1);
+        var textB = b.composer.toUpperCase().split(' ').splice(-1);
+        return textA < textB ? -1 : textA > textB ? 1 : 0;
+      });
+      response.send(sortedDocs);
+    } else response.send(docs);
+  } catch (err) {
+    response.status(500).send(err);
+  }
 }
 
-function addOrUpdateModel(model, modelName, response) {
+async function addOrUpdateModel(model, modelName, response) {
   console.log('Attempting to save object: \n ' + model);
   var query = {
     _id: model._id,
   };
-  mongoose.model(modelName).findOneAndUpdate(
-    query,
-    model,
-    {
-      upsert: true,
-    },
-    function (error, doc) {
-      if (error) {
-        console.log('Error occured when trying to add / update! ' + error);
-        if (response) response.status(500).send(error);
-      } else {
-        console.log('Successfullly added / updated model to database.');
-        if (response) response.status(200).send(model._id);
-      }
-    }
-  );
+  try {
+    await mongoose.model(modelName).findOneAndUpdate(query, model, { upsert: true });
+    console.log('Successfullly added / updated model to database.');
+    if (response) response.status(200).send(model._id);
+  } catch (error) {
+    console.log('Error occured when trying to add / update! ' + error);
+    if (response) response.status(500).send(error);
+  }
 }
 
-function removeById(modelName, id, response) {
+async function removeById(modelName, id, response) {
   console.log('Attempting to remove ' + modelName + ' with ID ' + id);
-  mongoose
-    .model(modelName)
-    .find({
-      _id: id,
-    })
-    .remove((error) => {
-      if (error) {
-        console.log('Error removing item from database: ' + error);
-        response.status(500).send(error);
-      } else {
-        console.log('Success removing item from database.');
-        response.status(200).send('Successfully removed model from database: id: ' + id);
-      }
-    });
+  try {
+    await mongoose.model(modelName).findByIdAndDelete(id);
+    console.log('Success removing item from database.');
+    response.status(200).send('Successfully removed model from database: id: ' + id);
+  } catch (error) {
+    console.log('Error removing item from database: ' + error);
+    response.status(500).send(error);
+  }
 }
 
 module.exports = router;

@@ -17,7 +17,9 @@ app.use(bodyParser.urlencoded({ extended: false, limit: '5mb' }));
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(express.static(path.join(__dirname, 'public')));
 
-mongoose.connect(process.env.MONGODB_CONNECTION_STRING);
+mongoose.connect(process.env.MONGODB_CONNECTION_STRING)
+  .then(() => console.log('MongoDB connected'))
+  .catch(err => console.error('MongoDB connection error:', err));
 
 app.use('/', require('./routes/index'));
 app.use('/m', require('./routes/m'));
