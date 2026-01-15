@@ -148,7 +148,7 @@
         <div class="row text-center">
           <div class="col-md-12">
             <div class="col-md-9">
-              <p class="text-muted" style="text-align: justify; padding-right: 7px; line-height: 1.5;">
+              <p class="text-muted" style="text-align: justify; padding-right: 7px; line-height: 1.5">
                 <%- [0,1,2].map(x => data.aboutSections[x].content).join('') .replace(/\*\*\*/g, '<br />' + '&nbsp;'.repeat(10)) %>
               </p>
             </div>
@@ -200,10 +200,9 @@
         <div class="row">
           <div class="col-lg-12 text-center">
             <h2 class="section-heading">Recordings</h2>
-            <h3 class="section-subheading text-muted" style="margin-bottom: 16px;">Aurelia Vișovan's discography</h3>
+            <h3 class="section-subheading text-muted" style="margin-bottom: 16px">Aurelia Vișovan's discography</h3>
           </div>
         </div>
-
         <!-- Horizontal CD Picker -->
         <div class="row">
           <div class="cd-picker-container">
@@ -256,92 +255,101 @@
     <script>
       var cdData = [
         {
-          name: "Liszt – 12 Grandes Études",
+          name: 'Liszt – 12 Grandes Études',
           year: 2026,
-          image: "/img/recordings/Liszt 12 Grandes Etudes.jpg",
-          trailer: "https://www.youtube.com/embed/q0NNHjy9IVo",
+          image: '/img/recordings/Liszt 12 Grandes Etudes.jpg',
+          trailer: 'https://www.youtube.com/embed/q0NNHjy9IVo',
           links: [
-            { label: "Passacaille", url: "https://passacaille.be/en/product/liszt-12-grandes-etudes-s-137/" },
-            { label: "Spotify", url: "https://open.spotify.com/intl-de/album/5WxFSMX3DF5eQRQIsyL2A3" },
-            { label: "Apple Music", url: "https://classical.music.apple.com/de/album/1854450242" }
-          ]
+            { label: 'Passacaille', url: 'https://passacaille.be/en/product/liszt-12-grandes-etudes-s-137/' },
+            { label: 'Spotify', url: 'https://open.spotify.com/intl-de/album/5WxFSMX3DF5eQRQIsyL2A3' },
+            { label: 'Apple Music', url: 'https://classical.music.apple.com/de/album/1854450242' },
+          ],
         },
         {
-          name: "Doktor Lichtentals Mozart",
+          name: 'Doktor Lichtentals Mozart',
           year: 2023,
-          image: "/img/recordings/Doktor Lichtentals Mozart.jpg",
+          image: '/img/recordings/Doktor Lichtentals Mozart.jpg',
           trailer: null,
           links: [
-            { label: "Gramola", url: "https://www.gramola.at/products/9003643992689" },
-            { label: "Spotify", url: "https://open.spotify.com/album/54T0OeX4UiBwJmcye46huG" },
-            { label: "Apple Music", url: "https://music.apple.com/us/album/doktor-lichtenthals-mozart-piano-works/1687527671" }
-          ]
+            { label: 'Gramola', url: 'https://www.gramola.at/products/9003643992689' },
+            { label: 'Spotify', url: 'https://open.spotify.com/album/54T0OeX4UiBwJmcye46huG' },
+            { label: 'Apple Music', url: 'https://music.apple.com/us/album/doktor-lichtenthals-mozart-piano-works/1687527671' },
+          ],
         },
         {
-          name: "Capriccio Appassionato",
+          name: 'Capriccio Appassionato',
           year: 2022,
-          image: "/img/recordings/Capriccio Appassionato.jpg",
-          trailer: "https://www.youtube.com/embed/UIE5mPOkEqg",
+          image: '/img/recordings/Capriccio Appassionato.jpg',
+          trailer: 'https://www.youtube.com/embed/UIE5mPOkEqg',
           links: [
-            { label: "Passacaille", url: "https://passacaille.be/en/product/czerny-schubert-capriccio-apassionato/" },
-            { label: "Spotify", url: "https://open.spotify.com/album/1Lmp7Bgq2gsxCeFlWlwBNG" },
-            { label: "Apple Music", url: "https://music.apple.com/us/album/schubert-czerny-capriccio-appassionato-keyboard-sonatas/1635635903" }
-          ]
+            { label: 'Passacaille', url: 'https://passacaille.be/en/product/czerny-schubert-capriccio-apassionato/' },
+            { label: 'Spotify', url: 'https://open.spotify.com/album/1Lmp7Bgq2gsxCeFlWlwBNG' },
+            {
+              label: 'Apple Music',
+              url: 'https://music.apple.com/us/album/schubert-czerny-capriccio-appassionato-keyboard-sonatas/1635635903',
+            },
+          ],
         },
         {
-          name: "Harpsifly",
+          name: 'Harpsifly',
           year: 2021,
-          image: "/img/recordings/Harpsifly.jpg",
+          image: '/img/recordings/Harpsifly.jpg',
           trailer: null,
           links: [
-            { label: "Gramola", url: "https://www.gramola.at/products/9003643992245" },
-            { label: "Spotify", url: "https://open.spotify.com/album/7ruqJhXauQzzZhOm4MdJCo" },
-            { label: "Apple Music", url: "https://music.apple.com/fm/album/harpsifly-a-story-of-gordon-murray-and-his-instruments/1564151702" }
-          ]
+            { label: 'Gramola', url: 'https://www.gramola.at/products/9003643992245' },
+            { label: 'Spotify', url: 'https://open.spotify.com/album/7ruqJhXauQzzZhOm4MdJCo' },
+            {
+              label: 'Apple Music',
+              url: 'https://music.apple.com/fm/album/harpsifly-a-story-of-gordon-murray-and-his-instruments/1564151702',
+            },
+          ],
         },
         {
-          name: "Sonata Lunatica",
+          name: 'Sonata Lunatica',
           year: 2020,
-          image: "/img/recordings/Sonata Lunatica.jpg",
-          trailer: "https://www.youtube.com/embed/JBvy2LBHcnM",
+          image: '/img/recordings/Sonata Lunatica.jpg',
+          trailer: 'https://www.youtube.com/embed/JBvy2LBHcnM',
           links: [
-            { label: "Passacaille", url: "https://passacaille.be/en/product/beethoven-sonata-lunatica/" },
-            { label: "Spotify", url: "https://open.spotify.com/album/1TW4uV4EjN935aGnM4Sail" },
-            { label: "Apple Music", url: "https://music.apple.com/us/album/beethoven-sonatina-lunatica-violin-sonatas-nos-9-10/1538668512" }
-          ]
+            { label: 'Passacaille', url: 'https://passacaille.be/en/product/beethoven-sonata-lunatica/' },
+            { label: 'Spotify', url: 'https://open.spotify.com/album/1TW4uV4EjN935aGnM4Sail' },
+            {
+              label: 'Apple Music',
+              url: 'https://music.apple.com/us/album/beethoven-sonatina-lunatica-violin-sonatas-nos-9-10/1538668512',
+            },
+          ],
         },
         {
-          name: "Mozart Hummel Beethoven – Concerto Sonate Symphony",
+          name: 'Mozart Hummel Beethoven – Concerto Sonate Symphony',
           year: 2020,
-          image: "/img/recordings/Mozart Hummel Beethoven Concerto Sonate Symphony.jpg",
+          image: '/img/recordings/Mozart Hummel Beethoven Concerto Sonate Symphony.jpg',
           trailer: null,
           links: [
-            { label: "Outhere Music", url: "https://outhere-music.com/en/albums/mozart-hummel-beethoven-concerto-sonate-symphony" },
-            { label: "Spotify", url: "https://open.spotify.com/album/5rGSszFCA2shVoezEUmuCi" },
-            { label: "Apple Music", url: "https://music.apple.com/us/album/mozart-hummel-beethoven-concerto-sonate-symphony/1572132383" }
-          ]
+            { label: 'Outhere Music', url: 'https://outhere-music.com/en/albums/mozart-hummel-beethoven-concerto-sonate-symphony' },
+            { label: 'Spotify', url: 'https://open.spotify.com/album/5rGSszFCA2shVoezEUmuCi' },
+            { label: 'Apple Music', url: 'https://music.apple.com/us/album/mozart-hummel-beethoven-concerto-sonate-symphony/1572132383' },
+          ],
         },
         {
-          name: "Roots",
+          name: 'Roots',
           year: 2018,
-          image: "/img/recordings/Roots.jpg",
+          image: '/img/recordings/Roots.jpg',
           trailer: null,
           links: [
-            { label: "Spotify", url: "https://open.spotify.com/album/7Gq3QgfQv92l1JWuIZOBHL" },
-            { label: "Apple Music", url: "https://classical.music.apple.com/us/album/1441936448" }
-          ]
+            { label: 'Spotify', url: 'https://open.spotify.com/album/7Gq3QgfQv92l1JWuIZOBHL' },
+            { label: 'Apple Music', url: 'https://classical.music.apple.com/us/album/1441936448' },
+          ],
         },
         {
-          name: "Gassenhauer-Gassenbauer",
+          name: 'Gassenhauer-Gassenbauer',
           year: 2016,
-          image: "/img/recordings/Gassenhauer Gassenbauer.jpg",
+          image: '/img/recordings/Gassenhauer Gassenbauer.jpg',
           trailer: null,
           links: [
-            { label: "JPC", url: "https://www.jpc.de/jpcng/classic/detail/-/art/gassenhauer/hnum/3553418" },
-            { label: "Spotify", url: "https://open.spotify.com/album/4YQ8vvYvINJ4ShrCqNHReR" },
-            { label: "Apple Music", url: "https://music.apple.com/us/album/gassenhauer/1141386005" }
-          ]
-        }
+            { label: 'JPC', url: 'https://www.jpc.de/jpcng/classic/detail/-/art/gassenhauer/hnum/3553418' },
+            { label: 'Spotify', url: 'https://open.spotify.com/album/4YQ8vvYvINJ4ShrCqNHReR' },
+            { label: 'Apple Music', url: 'https://music.apple.com/us/album/gassenhauer/1141386005' },
+          ],
+        },
       ];
 
       function showCdDetail(index) {
@@ -360,7 +368,10 @@
           html += '<div class="cd-trailer-box">';
           html += '<h4 class="cd-trailer-title">Trailer</h4>';
           html += '<div class="cd-trailer">';
-          html += '<iframe src="' + cd.trailer + '" title="Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+          html +=
+            '<iframe src="' +
+            cd.trailer +
+            '" title="Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
           html += '</div>';
           html += '</div>';
         }
@@ -375,12 +386,14 @@
         document.getElementById('cd-detail').innerHTML = html;
       }
 
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener('DOMContentLoaded', function () {
         var cdItems = document.querySelectorAll('.cd-item');
 
-        cdItems.forEach(function(item) {
-          item.addEventListener('click', function() {
-            cdItems.forEach(function(i) { i.classList.remove('active'); });
+        cdItems.forEach(function (item) {
+          item.addEventListener('click', function () {
+            cdItems.forEach(function (i) {
+              i.classList.remove('active');
+            });
             this.classList.add('active');
             showCdDetail(parseInt(this.getAttribute('data-cd')));
           });
