@@ -188,7 +188,12 @@ h1 {
 
 #about {
   padding-top: 35px;
-  margin-bottom: 150px;
+  padding-bottom: 70px;
+}
+
+#recordings {
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 .subtitle {
