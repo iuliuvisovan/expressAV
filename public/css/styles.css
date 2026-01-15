@@ -236,13 +236,24 @@ h1 {
   height: 100px;
   object-fit: cover;
   border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.15),
+    4px 4px 0 -1px rgba(0, 0, 0, 0.1),
+    6px 6px 0 -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  transform: perspective(500px) rotateY(-5deg);
+}
+
+.cd-item:hover img {
+  transform: perspective(500px) rotateY(0deg);
 }
 
 .cd-item.active img {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transform: perspective(500px) rotateY(0deg) scale(1.08);
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.25),
+    6px 6px 0 -1px rgba(0, 0, 0, 0.1),
+    10px 10px 0 -2px rgba(0, 0, 0, 0.05);
 }
 
 .cd-item span {
@@ -262,6 +273,27 @@ h1 {
 .cd-detail-content {
   max-width: 700px;
   margin: 0 auto;
+}
+
+.cd-detail-image {
+  margin-bottom: 20px;
+}
+
+.cd-detail-image img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.2),
+    8px 8px 0 -2px rgba(0, 0, 0, 0.08),
+    14px 14px 0 -4px rgba(0, 0, 0, 0.04);
+  transform: perspective(800px) rotateY(-3deg);
+  transition: transform 0.4s ease;
+}
+
+.cd-detail-image img:hover {
+  transform: perspective(800px) rotateY(3deg);
 }
 
 .cd-title {
