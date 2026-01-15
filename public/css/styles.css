@@ -271,7 +271,6 @@ h1 {
 
 .cd-detail-image {
   margin-bottom: 50px;
-  perspective: 1000px;
   display: inline-block;
   position: relative;
 }
@@ -280,8 +279,19 @@ h1 {
   width: 240px;
   height: 240px;
   object-fit: cover;
-  transform: rotateY(14deg) rotateX(2deg);
-  box-shadow: -1px 0 0 #ccc, -2px 0 0 #ccc, -3px 0 0 #ccc, -4px 0 0 #ccc, -5px 0 0 #ccc, -6px 0 0 #ccc, -7px 0 0 #ccc, -8px 0 0 #ccc, -9px 0 0 #ccc, -10px 0 0 #ccc;
+  display: block;
+  transform: perspective(800px) rotateY(21deg);
+}
+
+.cd-spine {
+  position: absolute;
+  left: -10px;
+  top: 0;
+  width: 12px;
+  height: 100%;
+  background: linear-gradient(to right, #888, #bbb, #999);
+  transform: perspective(150px) rotateY(-45deg);
+  transform-origin: right center;
 }
 
 .cd-detail-image::after {
@@ -295,7 +305,6 @@ h1 {
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.2) 0%, transparent 70%);
   border-radius: 50%;
   z-index: -1;
-  bottom: -18px;
 }
 
 .cd-title {
