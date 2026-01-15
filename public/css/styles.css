@@ -281,15 +281,14 @@ h1 {
   border-radius: 2px;
   transform: rotateY(-8deg) rotateX(2deg);
   box-shadow:
-    1px 1px 0 #aaa,
-    2px 2px 0 #aaa,
-    3px 3px 0 #aaa,
-    4px 4px 0 #aaa,
-    5px 5px 0 #aaa,
-    6px 6px 0 #aaa,
-    7px 7px 0 #aaa,
-    8px 8px 0 #aaa,
-    9px 9px 25px rgba(0, 0, 0, 0.3);
+    2px 1px 0 #aaa,
+    4px 2px 0 #aaa,
+    6px 3px 0 #aaa,
+    8px 4px 0 #aaa,
+    10px 5px 0 #aaa,
+    12px 6px 0 #aaa,
+    14px 7px 0 #aaa,
+    16px 8px 25px rgba(0, 0, 0, 0.3);
 }
 
 .cd-title {
