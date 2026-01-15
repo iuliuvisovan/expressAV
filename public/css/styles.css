@@ -270,8 +270,10 @@ h1 {
 }
 
 .cd-detail-image {
-  margin-bottom: 25px;
+  margin-bottom: 50px;
   perspective: 1000px;
+  display: inline-block;
+  position: relative;
 }
 
 .cd-detail-image img {
@@ -279,15 +281,28 @@ h1 {
   height: 240px;
   object-fit: cover;
   border-radius: 2px;
-  transform: rotateY(8deg) rotateX(2deg);
+  transform: rotateY(14deg) rotateX(2deg);
   box-shadow:
-    -1px 1px 0 #aaa,
-    -2px 2px 0 #aaa,
-    -3px 3px 0 #aaa,
-    -4px 4px 0 #aaa,
-    -5px 5px 0 #aaa,
-    -6px 6px 0 #aaa,
-    -8px 8px 25px rgba(0, 0, 0, 0.3);
+    -1px 0 0 #aaa,
+    -2px 0 0 #aaa,
+    -3px 0 0 #aaa,
+    -4px 0 0 #aaa,
+    -5px 0 0 #aaa,
+    -6px 0 0 #aaa,
+    -7px 0 0 #aaa,
+    -8px 0 0 #aaa;
+}
+
+.cd-detail-image::after {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 15px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.3) 0%, transparent 70%);
+  border-radius: 50%;
 }
 
 .cd-title {
