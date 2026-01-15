@@ -203,15 +203,176 @@
             <h3 class="section-subheading text-muted">Aurelia Vișovan's discography</h3>
           </div>
         </div>
-        <div class="row text-center">
-          <div class="col-md-12">
-            <p class="text-muted">
-              Sample recordings content. This section will showcase albums, singles, and other recorded works.
-            </p>
+
+        <!-- Horizontal CD Picker -->
+        <div class="row">
+          <div class="cd-picker-container">
+            <div class="cd-picker">
+              <div class="cd-item active" data-cd="0">
+                <img src="/img/recordings/Liszt 12 Grandes Etudes.jpg" alt="Liszt 12 Grandes Études" />
+                <span>Liszt – 12 Grandes Études</span>
+              </div>
+              <div class="cd-item" data-cd="1">
+                <img src="/img/recordings/Doktor Lichtentals Mozart.jpg" alt="Doktor Lichtentals Mozart" />
+                <span>Doktor Lichtentals Mozart</span>
+              </div>
+              <div class="cd-item" data-cd="2">
+                <img src="/img/recordings/Capriccio Appassionato.jpg" alt="Capriccio Appassionato" />
+                <span>Capriccio Appassionato</span>
+              </div>
+              <div class="cd-item" data-cd="3">
+                <img src="/img/recordings/Harpsifly.jpg" alt="Harpsifly" />
+                <span>Harpsifly</span>
+              </div>
+              <div class="cd-item" data-cd="4">
+                <img src="/img/recordings/Sonata Lunatica.jpg" alt="Sonata Lunatica" />
+                <span>Sonata Lunatica</span>
+              </div>
+              <div class="cd-item" data-cd="5">
+                <img src="/img/recordings/Mozart Hummel Beethoven Concerto Sonate Symphony.jpg" alt="Mozart Hummel Beethoven" />
+                <span>Mozart Hummel Beethoven</span>
+              </div>
+              <div class="cd-item" data-cd="6">
+                <img src="/img/recordings/Roots.jpg" alt="Roots" />
+                <span>Roots</span>
+              </div>
+              <div class="cd-item" data-cd="7">
+                <img src="/img/recordings/Gassenhauer Gassenbauer.jpg" alt="Gassenhauer-Gassenbauer" />
+                <span>Gassenhauer-Gassenbauer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CD Detail View -->
+        <div class="row">
+          <div class="cd-detail" id="cd-detail">
+            <!-- Content populated by JS -->
           </div>
         </div>
       </div>
     </section>
+
+    <script>
+      var cdData = [
+        {
+          name: "Liszt – 12 Grandes Études",
+          year: 2026,
+          trailer: "https://www.youtube.com/embed/q0NNHjy9IVo",
+          links: [
+            { label: "Passacaille", url: "https://passacaille.be/en/product/liszt-12-grandes-etudes-s-137/" },
+            { label: "Spotify", url: "https://open.spotify.com/intl-de/album/5WxFSMX3DF5eQRQIsyL2A3" },
+            { label: "Apple Music", url: "https://classical.music.apple.com/de/album/1854450242" }
+          ]
+        },
+        {
+          name: "Doktor Lichtentals Mozart",
+          year: 2023,
+          trailer: null,
+          links: [
+            { label: "Gramola", url: "https://www.gramola.at/products/9003643992689" },
+            { label: "Spotify", url: "https://open.spotify.com/album/54T0OeX4UiBwJmcye46huG" },
+            { label: "Apple Music", url: "https://music.apple.com/us/album/doktor-lichtenthals-mozart-piano-works/1687527671" }
+          ]
+        },
+        {
+          name: "Capriccio Appassionato",
+          year: 2022,
+          trailer: "https://www.youtube.com/embed/UIE5mPOkEqg",
+          links: [
+            { label: "Passacaille", url: "https://passacaille.be/en/product/czerny-schubert-capriccio-apassionato/" },
+            { label: "Spotify", url: "https://open.spotify.com/album/1Lmp7Bgq2gsxCeFlWlwBNG" },
+            { label: "Apple Music", url: "https://music.apple.com/us/album/schubert-czerny-capriccio-appassionato-keyboard-sonatas/1635635903" }
+          ]
+        },
+        {
+          name: "Harpsifly",
+          year: 2021,
+          trailer: null,
+          links: [
+            { label: "Gramola", url: "https://www.gramola.at/products/9003643992245" },
+            { label: "Spotify", url: "https://open.spotify.com/album/7ruqJhXauQzzZhOm4MdJCo" },
+            { label: "Apple Music", url: "https://music.apple.com/fm/album/harpsifly-a-story-of-gordon-murray-and-his-instruments/1564151702" }
+          ]
+        },
+        {
+          name: "Sonata Lunatica",
+          year: 2020,
+          trailer: "https://www.youtube.com/embed/JBvy2LBHcnM",
+          links: [
+            { label: "Passacaille", url: "https://passacaille.be/en/product/beethoven-sonata-lunatica/" },
+            { label: "Spotify", url: "https://open.spotify.com/album/1TW4uV4EjN935aGnM4Sail" },
+            { label: "Apple Music", url: "https://music.apple.com/us/album/beethoven-sonatina-lunatica-violin-sonatas-nos-9-10/1538668512" }
+          ]
+        },
+        {
+          name: "Mozart Hummel Beethoven – Concerto Sonate Symphony",
+          year: 2020,
+          trailer: null,
+          links: [
+            { label: "Outhere Music", url: "https://outhere-music.com/en/albums/mozart-hummel-beethoven-concerto-sonate-symphony" },
+            { label: "Spotify", url: "https://open.spotify.com/album/5rGSszFCA2shVoezEUmuCi" },
+            { label: "Apple Music", url: "https://music.apple.com/us/album/mozart-hummel-beethoven-concerto-sonate-symphony/1572132383" }
+          ]
+        },
+        {
+          name: "Roots",
+          year: 2018,
+          trailer: null,
+          links: [
+            { label: "Spotify", url: "https://open.spotify.com/album/7Gq3QgfQv92l1JWuIZOBHL" },
+            { label: "Apple Music", url: "https://classical.music.apple.com/us/album/1441936448" }
+          ]
+        },
+        {
+          name: "Gassenhauer-Gassenbauer",
+          year: 2016,
+          trailer: null,
+          links: [
+            { label: "JPC", url: "https://www.jpc.de/jpcng/classic/detail/-/art/gassenhauer/hnum/3553418" },
+            { label: "Spotify", url: "https://open.spotify.com/album/4YQ8vvYvINJ4ShrCqNHReR" },
+            { label: "Apple Music", url: "https://music.apple.com/us/album/gassenhauer/1141386005" }
+          ]
+        }
+      ];
+
+      function showCdDetail(index) {
+        var cd = cdData[index];
+        var html = '<div class="cd-detail-content">';
+        html += '<h3 class="cd-title">' + cd.name + '</h3>';
+        html += '<p class="cd-year">' + cd.year + '</p>';
+
+        if (cd.trailer) {
+          html += '<div class="cd-trailer">';
+          html += '<iframe src="' + cd.trailer + '" title="Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+          html += '</div>';
+        }
+
+        html += '<div class="cd-links">';
+        for (var i = 0; i < cd.links.length; i++) {
+          html += '<a href="' + cd.links[i].url + '" target="_blank" class="cd-link">' + cd.links[i].label + '</a>';
+        }
+        html += '</div>';
+        html += '</div>';
+
+        document.getElementById('cd-detail').innerHTML = html;
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var cdItems = document.querySelectorAll('.cd-item');
+
+        cdItems.forEach(function(item) {
+          item.addEventListener('click', function() {
+            cdItems.forEach(function(i) { i.classList.remove('active'); });
+            this.classList.add('active');
+            showCdDetail(parseInt(this.getAttribute('data-cd')));
+          });
+        });
+
+        // Show first CD by default
+        showCdDetail(0);
+      });
+    </script>
 
     <!-- Events Section -->
     <section id="events" class="bg-light-gold">
