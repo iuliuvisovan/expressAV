@@ -1,3 +1,15 @@
+# 0.8.4
+
+- Update deep-extend (security fix)
+
+# 0.8.3
+
+- Fix requires
+
+# 0.8.2
+
+- Drop dependency on meow (vendor ext-name)
+
 # 0.8.1
 
 - Revert strict name validations and allow @, spaces and slashes
