@@ -357,9 +357,11 @@
         html += '<p class="cd-year">' + cd.year + '</p>';
 
         if (cd.trailer) {
+          html += '<div class="cd-trailer-box">';
           html += '<h4 class="cd-trailer-title">Trailer</h4>';
           html += '<div class="cd-trailer">';
           html += '<iframe src="' + cd.trailer + '" title="Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+          html += '</div>';
           html += '</div>';
         }
 
