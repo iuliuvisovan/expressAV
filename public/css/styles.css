@@ -280,9 +280,8 @@ h1 {
   width: 240px;
   height: 240px;
   object-fit: cover;
-  border-radius: 2px;
   transform: rotateY(14deg) rotateX(2deg);
-  box-shadow: -1px 0 0 #ccc, -2px 0 0 #ccc, -3px 0 0 #ccc, -4px 0 0 #ccc, -5px 0 0 #ccc, -6px 0 0 #ccc, -7px 0 0 #ccc, -8px 0 0 #ccc;
+  box-shadow: -1px 0 0 #ccc, -2px 0 0 #ccc, -3px 0 0 #ccc, -4px 0 0 #ccc, -5px 0 0 #ccc, -6px 0 0 #ccc, -7px 0 0 #ccc, -8px 0 0 #ccc, -9px 0 0 #ccc, -10px 0 0 #ccc;
 }
 
 .cd-detail-image::after {
