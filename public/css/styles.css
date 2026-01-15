@@ -236,24 +236,18 @@ h1 {
   height: 100px;
   object-fit: cover;
   border-radius: 4px;
-  box-shadow:
-    0 2px 8px rgba(0, 0, 0, 0.15),
-    4px 4px 0 -1px rgba(0, 0, 0, 0.1),
-    6px 6px 0 -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
-  transform: perspective(500px) rotateY(-5deg);
 }
 
 .cd-item:hover img {
-  transform: perspective(500px) rotateY(0deg);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cd-item.active img {
-  transform: perspective(500px) rotateY(0deg) scale(1.08);
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.25),
-    6px 6px 0 -1px rgba(0, 0, 0, 0.1),
-    10px 10px 0 -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .cd-item span {
@@ -276,24 +270,26 @@ h1 {
 }
 
 .cd-detail-image {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
+  perspective: 1000px;
 }
 
 .cd-detail-image img {
-  width: 220px;
-  height: 220px;
+  width: 240px;
+  height: 240px;
   object-fit: cover;
-  border-radius: 6px;
+  border-radius: 2px;
+  transform: rotateY(-8deg) rotateX(2deg);
   box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.2),
-    8px 8px 0 -2px rgba(0, 0, 0, 0.08),
-    14px 14px 0 -4px rgba(0, 0, 0, 0.04);
-  transform: perspective(800px) rotateY(-3deg);
-  transition: transform 0.4s ease;
-}
-
-.cd-detail-image img:hover {
-  transform: perspective(800px) rotateY(3deg);
+    1px 1px 0 #aaa,
+    2px 2px 0 #aaa,
+    3px 3px 0 #aaa,
+    4px 4px 0 #aaa,
+    5px 5px 0 #aaa,
+    6px 6px 0 #aaa,
+    7px 7px 0 #aaa,
+    8px 8px 0 #aaa,
+    9px 9px 25px rgba(0, 0, 0, 0.3);
 }
 
 .cd-title {
