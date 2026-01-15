@@ -285,12 +285,13 @@ h1 {
 
 .cd-spine {
   position: absolute;
-  left: -10px;
-  top: 0;
-  width: 12px;
-  height: 100%;
-  background: linear-gradient(to right, #888, #bbb, #999);
-  transform: perspective(150px) rotateY(-45deg);
+  left: -9px;
+  top: -7px;
+  width: 11px;
+  height: 253.8px;
+  background: #aaa;
+  /* background: linear-gradient(to right, #888, #bbb, #999); */
+  transform: perspective(300px) rotateY(-45deg);
   transform-origin: right center;
 }
 
