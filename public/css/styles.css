@@ -308,12 +308,12 @@ h1 {
 }
 
 .cd-title {
-  font-family: 'Quicksand', sans-serif;
   font-size: 28px;
   font-weight: 400;
   color: #333;
   margin-bottom: 5px;
   text-transform: none;
+  margin-top: 0;
 }
 
 .cd-year {
@@ -373,10 +373,21 @@ h1 {
     justify-content: flex-start;
     flex-wrap: nowrap;
     padding: 0 15px;
+    gap: 0;
   }
 
   .cd-picker-container {
     margin: 0 -15px;
+    width: calc(100% + 30px);
+  }
+
+  .cd-detail-image img {
+    width: 168px;
+    height: 168px;
+  }
+
+  .cd-spine {
+    height: 168px;
   }
 
   .cd-item {
