@@ -340,7 +340,7 @@ h1 {
 
 .cd-trailer-title {
   font-size: 14px;
-  color: #888;
+  color: #555;
   margin-bottom: 15px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -421,6 +421,11 @@ h1 {
 
   .cd-spine {
     height: 168px;
+  }
+
+  .cd-trailer-box {
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .cd-item {
