@@ -270,7 +270,7 @@ h1 {
 }
 
 .cd-detail-image {
-  margin-bottom: 50px;
+  margin-bottom: 32px;
   display: inline-block;
   position: relative;
 }
@@ -320,6 +320,15 @@ h1 {
   font-size: 18px;
   color: #888;
   margin-bottom: 20px;
+}
+
+.cd-trailer-title {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 400;
 }
 
 .cd-trailer {
